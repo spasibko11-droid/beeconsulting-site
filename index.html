@@ -1,0 +1,4005 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BeeConsulting — Юридическая компания</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&family=Caveat:wght@400;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:    #FFFFFF;
+      --ink:      #1A1A1A;
+      --ink-mid:  #505050;
+      --ink-low:  #909090;
+      --honey:    #2D3E56;
+      --honey-d:  #2D3E56;
+      --paper:    #F9F9F7;
+    }
+
+    html, body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Onest', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── SVG filters (hidden) ─────────────────────── */
+    .svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+    /* ── NAV ──────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      padding: 0 52px;
+      background: rgba(249,249,247,0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+    }
+    section[id] { scroll-margin-top: 84px; }
+    .nav-logo {
+      text-decoration: none;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+    .nav-logo-mark {
+      position: relative;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.15);
+      background: #F6F5F1;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .nav-logo-mark img {
+      position: relative;
+      width: 24px; height: auto;
+      filter: contrast(1.1) brightness(0.85);
+      transform: translateY(1px);
+    }
+    .nav-logo-text {
+      display: flex; flex-direction: column;
+      gap: 2px; line-height: 1;
+    }
+    .nav-logo-name {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: #2D3E56;
+      letter-spacing: -0.01em;
+    }
+    .nav-logo-name em { font-style: italic; font-weight: 500; color: #2D3E56; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin: 0 auto;
+      list-style: none;
+    }
+    .nav-links li {
+      display: flex;
+      align-items: center;
+    }
+    .nav-links a {
+      font-family: 'Onest', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: var(--ink-mid);
+      text-decoration: none;
+      transition: color .18s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      padding: 9px 20px;
+      background: #2D3E56;
+      border: none;
+      border-radius: 4px;
+      transition: background .18s, transform .14s;
+      flex-shrink: 0;
+    }
+    .nav-cta:hover { background: #1e2e42; transform: translateY(-1px); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+    .nav-collapse { display: contents; }
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 36px; height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-shrink: 0;
+      padding: 0;
+    }
+    .nav-burger span {
+      display: block;
+      width: 22px; height: 2px;
+      background: var(--ink);
+      transition: transform .25s ease, opacity .2s ease;
+    }
+    nav.nav-open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    nav.nav-open .nav-burger span:nth-child(2) { opacity: 0; }
+    nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-phone {
+      font-family: 'Caveat', cursive;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: color .18s;
+    }
+    .nav-phone:hover { color: var(--honey); }
+    .nav-messengers {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-messengers a {
+      display: flex;
+      align-items: center;
+      color: var(--ink-mid);
+      opacity: 0.8;
+      transition: opacity .18s, color .18s, transform .14s;
+    }
+    .nav-messengers a:hover { opacity: 1; color: var(--honey-d); transform: scale(1.08); }
+    .nav-messengers a img {
+      width: 32px; height: 32px;
+      object-fit: contain;
+      filter: contrast(1.1) brightness(0.8);
+    }
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 20px;
+      background: #2D3E56;
+      color: #fff;
+      font-family: 'Onest', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 4px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .18s, transform .14s;
+      flex-shrink: 0;
+    }
+    .nav-btn:hover { background: #1e2e42; transform: translateY(-1px); }
+
+    /* ── HERO ─────────────────────────────────────── */
+    .hero {
+      min-height: 100dvh;
+      display: flex;
+      align-items: flex-start; /* fixed top offset instead of centering — predictable position, not at the mercy of content height */
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 0% center;
+      transform: scale(1.18) translateX(0%);
+      transform-origin: center center;
+      z-index: 0;
+    }
+    .hero-bg-scrim {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(to right,
+        var(--paper) 0%,
+        rgba(249,249,247,0.92) 30%,
+        rgba(249,249,247,0.55) 45%,
+        rgba(249,249,247,0.15) 58%,
+        transparent 70%);
+    }
+    .hero-left {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      padding: 104px 60px 64px 96px;
+      width: 56vw;
+      max-width: 900px;
+    }
+    .hero-rule {
+      width: 44px;
+      height: 2px;
+      background: #E8A020;
+      border: none;
+      margin: 18px 0 24px;
+    }
+    .hero-deco-line {
+      position: absolute;
+      left: 46px;
+      top: 90px;
+      width: 1px;
+      height: 604px;
+      background: linear-gradient(to bottom, transparent 0%, #9b9a93 6%, #9b9a93 94%, transparent 100%);
+      opacity: 0.75;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .hero-deco-line::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      width: 8px; height: 8px;
+      background: #9b9a93;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .hero-trust-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 26px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-trust-icon {
+      width: 46px; height: 46px;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-trust-icon img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      filter: contrast(1.06) brightness(0.94);
+    }
+    .hero-trust-text {
+      font-family: 'Onest', sans-serif;
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--ink-mid);
+    }
+    .hero-trust-text strong {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--ink);
+    }
+    /* hero elements are always visible — no scroll-reveal delay */
+    .hero-left .rv { opacity: 1; transform: none; }
+
+    .hero-chips-bar {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      margin-top: 36px;
+    }
+    .hero-chip-item {
+      font-family: 'Caveat', cursive;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink-mid);
+      border: 1px solid rgba(26,26,26,0.14);
+      border-radius: 3px;
+      padding: 2px 10px 3px;
+      background: transparent;
+      line-height: 1.45;
+      white-space: nowrap;
+      transition: border-color .18s, color .18s;
+    }
+    .hero-chip-item:hover {
+      border-color: rgba(232,160,32,0.5);
+      color: var(--ink);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Caveat', cursive;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink-low);
+      margin-bottom: 24px;
+      letter-spacing: 0.01em;
+    }
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--honey);
+      flex-shrink: 0;
+    }
+
+    /* ── HEADLINE ─────────────────────────────────── */
+    h1, h2, h3 {
+      font-weight: 400;
+      color: #323232;
+    }
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: clamp(42px, 4.4vw, 64px);
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      color: #323232;
+      margin-bottom: 0;
+    }
+    h1 em {
+      font-style: italic;
+      color: #2D3E56;
+      font-weight: 400;
+    }
+
+    .subhead {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--ink-mid);
+      max-width: 420px;
+      margin-bottom: 32px;
+    }
+
+    /* ── CTA ROW ──────────────────────────────────── */
+    .cta-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 30px;
+      background: #2D3E56;
+      color: #fff;
+      font-family: 'Onest', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .18s, transform .14s;
+      white-space: nowrap;
+      flex-shrink: 0;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #1e2e42; transform: translateY(-1px); }
+
+    /* Badge "100% дел выиграно" — hand-drawn oval from JS */
+    .badge {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 16px 9px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .badge-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      pointer-events: none;
+    }
+    .badge-dot {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--honey);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── CHIPS ────────────────────────────────────── */
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px 40px;
+      margin-bottom: 36px;
+    }
+
+    /*
+      Chip approach:
+      - The chip itself: no border, just padding + text
+      - ::before: the border layer — filter applied ONLY here
+        so text stays sharp
+      - inset: -3px so the filter's displacement doesn't clip
+    */
+    .chip-break { flex-basis: 100%; height: 0; }
+
+    .chip {
+      position: relative;
+      display: inline-block;
+      padding: 15px 22px;
+      font-family: 'Caveat', cursive;
+      font-size: 16px;
+      color: var(--ink-mid);
+      white-space: nowrap;
+      cursor: default;
+      transition: color .18s;
+    }
+    .chip::before {
+      content: '';
+      position: absolute;
+      left: -14px; right: -14px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 62px;
+      pointer-events: none;
+      /* background removed — animated SVG injected by buildChipOvals() */
+    }
+    .chip-oval-svg {
+      position: absolute;
+      left: -14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: calc(100% + 28px);
+      height: 62px;
+      pointer-events: none;
+      overflow: visible;
+      z-index: 0;
+    }
+    .chip { overflow: visible; }
+    .chip:hover { color: var(--ink); }
+
+    /* ── GUARANTEE CARD ───────────────────────────── */
+    .guarantee {
+      position: relative;
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 20px 16px 18px;
+      background: rgba(253,250,245,0.7);
+      max-width: 380px;
+      margin-top: auto;
+    }
+    .stats-row {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin-top: 16px;
+      font-family: 'Caveat', cursive;
+      font-size: 15px;
+      color: var(--ink-low);
+      flex-wrap: wrap;
+    }
+    .stats-row span.sep { color: var(--honey); opacity: 0.6; }
+    /* JS draws the wobbly rect border inside this SVG */
+    .guarantee-frame {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      pointer-events: none;
+    }
+    /* small sotas watermark bottom-right */
+    .guarantee-sotas {
+      position: absolute;
+      bottom: 5px;
+      right: 8px;
+      pointer-events: none;
+      opacity: 0.1;
+    }
+    .g-icon {
+      flex-shrink: 0;
+      margin-top: 2px;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--honey);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 14px;
+    }
+    .g-title {
+      font-family: 'Caveat', cursive;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+    .g-body {
+      font-size: 12.5px;
+      color: var(--ink-mid);
+      line-height: 1.55;
+    }
+
+    /* ── RIGHT COLUMN ─────────────────────────────── */
+    .hero-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+      background: transparent;
+    }
+
+    /*
+      Hex background: fills the column.
+      Mask: transparent on the left ~18% (toward text),
+      full solid from 18% rightward — even, dense field.
+    */
+    /* hex-bg: выходит ниже и левее hero, диагональное затухание вправо→влево-вниз */
+    .hex-bg {
+      position: absolute;
+      top: 0;
+      left: -8%;
+      width: 115%;
+      height: 112%;
+      pointer-events: none;
+      z-index: 0;
+      /*
+        Одна диагональная маска "to bottom left":
+        — старт (верх-право) = solid → соты видны у пчелы
+        — конец (низ-лево)  = transparent → затухают по диагонали вниз-влево
+        Пересечение с горизонтальным: не даёт сотам вылезти в самый левый край
+      */
+      -webkit-mask-image:
+        linear-gradient(to bottom left, #000 28%, rgba(0,0,0,0.55) 44%, rgba(0,0,0,0.28) 60%, rgba(0,0,0,0.09) 78%, rgba(0,0,0,0.02) 90%, transparent 100%),
+        linear-gradient(to right, transparent 18%, rgba(0,0,0,0.55) 42%, #000 60%);
+      -webkit-mask-composite: source-in;
+              mask-image:
+        linear-gradient(to bottom left, #000 28%, rgba(0,0,0,0.55) 44%, rgba(0,0,0,0.28) 60%, rgba(0,0,0,0.09) 78%, rgba(0,0,0,0.02) 90%, transparent 100%),
+        linear-gradient(to right, transparent 18%, rgba(0,0,0,0.55) 42%, #000 60%);
+              mask-composite: intersect;
+    }
+
+    .bee-ann {
+      position: absolute;
+      font-family: 'Caveat', cursive;
+      font-weight: 600;
+      color: var(--ink);
+      pointer-events: none;
+      z-index: 2;
+      line-height: 1.3;
+    }
+    .bee-ann::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.3;
+      margin-top: 3px;
+    }
+    .bee-ann-1 {
+      top: 12%;
+      left: 4%;
+      font-size: 16px;
+      opacity: 0.7;
+      transform: rotate(-3deg);
+    }
+    .bee-ann-2 {
+      bottom: 10%;
+      right: 4%;
+      font-size: 15px;
+      opacity: 0.6;
+      transform: rotate(2deg);
+      text-align: right;
+    }
+
+    .bee-wrap {
+      position: absolute;
+      top: -48px;
+      left: -8%;
+      right: -6%;
+      bottom: -40px;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bee-img {
+      display: block;
+      width: 100%;
+      max-width: 820px;
+      height: auto;
+      max-height: calc(100dvh - 48px);
+      object-fit: contain;
+      object-position: center center;
+      filter: contrast(1.06) brightness(0.98);
+      mix-blend-mode: multiply;
+      animation: float 9s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: rotate(12deg) translateY(0px); }
+      50%       { transform: rotate(12deg) translateY(-18px); }
+    }
+
+    /* Handwritten annotations on the bee */
+    .ann {
+      position: absolute;
+      font-family: 'Caveat', cursive;
+      color: rgba(0,0,0,0.28);
+      pointer-events: none;
+      line-height: 1.2;
+    }
+
+    /* ── REVEAL ANIMATIONS ────────────────────────── */
+    .rv {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .6s cubic-bezier(.16,1,.3,1),
+                  transform .6s cubic-bezier(.16,1,.3,1);
+    }
+    .rv.on { opacity: 1; transform: none; }
+    .d1 { transition-delay: .10s; }
+    .d2 { transition-delay: .20s; }
+    .d3 { transition-delay: .30s; }
+    .d4 { transition-delay: .40s; }
+    .d5 { transition-delay: .50s; }
+    .d6 { transition-delay: .60s; }
+
+    /* ══════════════════════════════════════════════
+       SERVICES SECTION
+    ══════════════════════════════════════════════ */
+
+    .services {
+      padding: 40px 48px 80px;
+      max-width: 1320px;
+      margin: 0 auto;
+      position: relative;
+      isolation: isolate;
+    }
+
+    /* ── Header ─────────────────────────────────── */
+    .svc-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 44px;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .5s cubic-bezier(.16,1,.3,1),
+                  transform .5s cubic-bezier(.16,1,.3,1);
+    }
+    .svc-header.on { opacity: 1; transform: none; }
+
+    .svc-eyebrow {
+      display: block;
+      font-family: 'Caveat', cursive;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--honey);
+      margin-bottom: 8px;
+    }
+
+    .services h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: clamp(34px, 3.6vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: #323232;
+    }
+    .services h2 em {
+      font-style: italic;
+      color: var(--honey);
+      font-weight: 600;
+    }
+
+
+    /* ── Grid: bento 12 колонок ────────────────────── */
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 22px;
+    }
+    .svc-card--01 { grid-column: span 7; grid-row: span 2; }
+    .svc-card--02 { grid-column: span 5; }
+    .svc-card--03 { grid-column: span 5; }
+    .svc-card--04 { grid-column: span 12; }
+
+    /* ── Card base ───────────────────────────────── */
+    .svc-card {
+      --i: 0; /* set by JS per card */
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 32px 30px;
+      cursor: pointer;
+      text-decoration: none;
+      isolation: isolate;
+      background: #fff;
+      border: 1px solid rgba(26,26,26,0.12);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow:
+        0 1px 0 0 rgba(180,140,60,0.12),
+        0 4px 24px rgba(174,134,56,0.07),
+        0 1px 4px rgba(0,0,0,0.05);
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity .55s cubic-bezier(.16,1,.3,1),
+        transform .55s cubic-bezier(.16,1,.3,1),
+        box-shadow .3s ease;
+      transition-delay: calc(var(--i) * 0.1s);
+    }
+    .svc-card.on { opacity: 1; transform: translateY(0); }
+    .svc-card.on:hover {
+      box-shadow:
+        0 1px 0 0 rgba(180,140,60,0.14),
+        0 16px 48px rgba(174,134,56,0.13),
+        0 4px 12px rgba(0,0,0,0.07);
+    }
+
+    .svc-card--01 { padding: 42px; }
+    .svc-card--04 { padding: 30px 38px; }
+
+    /* ── Sketchbook content stagger ──────────────── */
+    .svc-card .svc-card-head,
+    .svc-card .svc-tags,
+    .svc-card .svc-card-desc {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.4s ease, transform 0.4s cubic-bezier(.16,1,.3,1);
+    }
+    .svc-card.on .svc-card-head  {
+      opacity: 1; transform: translateY(0);
+      transition-delay: calc(var(--i) * 0.1s + 0.15s);
+    }
+    .svc-card.on .svc-card-desc {
+      opacity: 1; transform: translateY(0);
+      transition-delay: calc(var(--i) * 0.1s + 0.3s);
+    }
+    .svc-card.on .svc-tags {
+      opacity: 1; transform: translateY(0);
+      transition-delay: calc(var(--i) * 0.1s + 0.42s);
+    }
+
+    /* ── Illustration (watermark, behind text) ───── */
+    .svc-illustration {
+      position: absolute;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .svc-illustration img {
+      width: 100%; display: block;
+    }
+    .svc-card--01 .svc-illustration { width: 560px; right: -90px; bottom: 0; opacity: 0.9; }
+    .svc-card--01 .svc-illustration img { filter: brightness(1.35) contrast(0.88); }
+    .svc-card--02 .svc-illustration,
+    .svc-card--03 .svc-illustration {
+      position: static;
+      width: 116px;
+      flex-shrink: 0;
+      margin-left: auto;
+      opacity: 0.88;
+    }
+
+    /* ── Head row: number + title ─────────────────── */
+    .svc-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+      z-index: 1;
+    }
+    /* ── Title ───────────────────────────────────── */
+    .svc-card-title {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      color: #323232;
+      z-index: 1;
+    }
+    .svc-card--01 .svc-card-title { font-size: 33px; }
+    .svc-card--04 .svc-card-title { font-size: 24px; white-space: nowrap; }
+
+    /* ── Description ─────────────────────────────── */
+    .svc-card-desc {
+      font-family: 'Onest', sans-serif;
+      font-size: 14px;
+      line-height: 1.58;
+      color: var(--ink-mid);
+      max-width: 420px;
+      margin-bottom: 18px;
+      z-index: 1;
+    }
+    .svc-card--01 .svc-card-desc { font-size: 15.5px; max-width: 440px; }
+
+    /* ── Card 04: horizontal bar layout ───────────── */
+    .svc-card--04-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 36px;
+      width: 100%;
+    }
+    .svc-card--04-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .svc-card--04-icon {
+      width: 64px;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .svc-card--04-icon img {
+      width: 100%; display: block;
+      filter: contrast(1.06) brightness(0.94);
+    }
+    .svc-card--04 .svc-card-head { margin-bottom: 0; }
+    .svc-card--04 .svc-card-desc { margin-bottom: 0; max-width: 480px; }
+
+    /* ── Tags ───────────────────────────────────── */
+    .svc-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px 6px;
+      margin-bottom: 11px;
+      z-index: 1;
+    }
+    .svc-tag {
+      font-family: 'Caveat', cursive;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-mid);
+      border: 1px solid rgba(26,26,26,0.14);
+      border-radius: 3px;
+      padding: 1px 8px 2px;
+      background: transparent;
+      line-height: 1.45;
+      white-space: nowrap;
+      transition: border-color .18s, color .18s;
+    }
+    .svc-card:hover .svc-tag {
+      border-color: rgba(232,160,32,0.5);
+      color: var(--ink);
+    }
+
+
+    /* ── Arrow (reveals on hover) ────────────────── */
+    .svc-card-arrow {
+      display: block;
+      margin-top: auto;
+      padding-top: 14px;
+      font-family: 'Caveat', cursive;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--honey);
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity .18s, transform .18s;
+      z-index: 1;
+    }
+    .svc-card.on:hover .svc-card-arrow { opacity: 1; transform: translateX(0); }
+
+    /* ── CTA card ────────────────────────────────── */
+    .svc-cta {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      background: var(--honey);
+      transition:
+        background .2s,
+        opacity .55s cubic-bezier(.16,1,.3,1),
+        transform .55s cubic-bezier(.16,1,.3,1);
+    }
+    .svc-cta.on:hover {
+      background: var(--honey-d);
+      transform: none;
+      transition: background .2s;
+    }
+    .svc-cta path.svc-border-path {
+      stroke: rgba(255,255,255,0.2) !important;
+      transition: stroke .2s;
+    }
+    .svc-cta:hover path.svc-border-path {
+      stroke: rgba(255,255,255,0.3) !important;
+    }
+
+    .svc-cta-text { z-index: 1; }
+    .svc-cta-label {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 20px;
+      font-weight: 400;
+      color: #fff;
+    }
+    .svc-cta-sub {
+      display: block;
+      font-family: 'Caveat', cursive;
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      margin-top: 1px;
+    }
+    .svc-cta-arrow {
+      font-family: 'Onest', sans-serif;
+      font-weight: 300;
+      font-size: 30px;
+      color: rgba(255,255,255,0.75);
+      z-index: 1;
+      line-height: 1;
+      transition: transform .2s cubic-bezier(.16,1,.3,1);
+    }
+    .svc-cta.on:hover .svc-cta-arrow { transform: translateX(6px); }
+
+    /* ── Decorative hex watermark ───────────────── */
+    .svc-hex-deco {
+      position: absolute;
+      bottom: 10px; right: 10px;
+      width: 220px; height: auto;
+      pointer-events: none;
+      opacity: 0.55;
+    }
+    .svc-bee-deco {
+      position: absolute;
+      top: -30px;
+      left: 60%;
+      width: 260px;
+      height: auto;
+      opacity: 0.16;
+      transform: rotate(-18deg);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ════════════════════════════════════════════
+       SITUATIONS — тёмная секция с карточками болей
+       ════════════════════════════════════════════ */
+    .situations {
+      background: rgba(28, 21, 10, 0.91);
+      padding: 92px 48px 100px;
+      position: relative;
+      overflow: hidden;
+      max-width: 1260px;
+      margin: 0 auto;
+      border-radius: 28px;
+    }
+    .situations::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 55% 50% at 10% 100%, rgba(26,122,82,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 38% 42% at 88% 8%,  rgba(26,122,82,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* ── Intro: текст слева, правая половина — под картинку ── */
+    .sit-intro-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 56px;
+      align-items: start;
+      margin-bottom: 72px;
+      position: relative; z-index: 1;
+    }
+
+    .sit-intro {
+      position: relative; z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    /* Слот — правая колонка с иллюстрацией */
+    .sit-img-slot {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sit-hourglass {
+      width: 80%;
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin: -16px auto -52px;
+      transform: rotate(-5deg);
+      animation: hg-float 6s ease-in-out infinite;
+    }
+    @keyframes hg-float {
+      0%, 100% { transform: rotate(-6deg) translateY(0); }
+      50%       { transform: rotate(-6deg) translateY(-10px); }
+    }
+
+    .sit-eyebrow {
+      display: block;
+      font-family: 'Caveat', cursive;
+      font-size: 21px; font-weight: 700;
+      color: var(--honey);
+      margin-bottom: 28px;
+      opacity: 0.9;
+      letter-spacing: 0.01em;
+    }
+    .sit-intro h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: clamp(30px, 3.2vw, 50px);
+      line-height: 1.08; letter-spacing: -0.03em;
+      color: #FDFAF5;
+      margin-bottom: 36px;
+    }
+    .sit-intro h2 em {
+      font-style: italic; color: var(--honey); font-weight: 600;
+    }
+    .sit-intro p {
+      font-family: 'Onest', sans-serif;
+      font-size: 15.5px; line-height: 1.82;
+      color: rgba(253,250,245,0.52);
+    }
+    .sit-highlight { color: #FDFAF5; font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .sit-intro-row { grid-template-columns: 1fr; }
+      .sit-img-slot { display: none; }
+    }
+
+    /* ── 2-column grid ── */
+    .sit-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 28px;
+      position: relative; z-index: 1;
+    }
+
+    /* Column labels */
+    .sit-col-label {
+      font-family: 'Caveat', cursive;
+      font-size: 18px; font-weight: 700;
+      color: rgba(253,250,245,0.55);
+      letter-spacing: 0.03em;
+      display: flex; align-items: center; gap: 9px;
+      padding-bottom: 10px; margin-bottom: 2px;
+    }
+    .sit-col-label svg { color: var(--honey); flex-shrink: 0; }
+    .sit-col-label::after {
+      content: '';
+      flex: 1; height: 0.5px;
+      background: rgba(253,250,245,0.10);
+    }
+
+    /* ── Card ── */
+    .sit-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 26px 24px 22px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0; transform: translateY(22px);
+      transition:
+        opacity .52s cubic-bezier(.16,1,.3,1),
+        transform .52s cubic-bezier(.16,1,.3,1),
+        box-shadow .26s ease;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.22), 0 1px 4px rgba(0,0,0,0.12);
+    }
+    .sit-card.on               { opacity: 1; transform: translateY(0); }
+    .sit-card.on:hover         {
+      box-shadow: 0 8px 36px rgba(0,0,0,0.28), 0 2px 8px rgba(0,0,0,0.14);
+      transform: translateY(-3px);
+    }
+
+    /* ── Wobbly border SVG (drawn by JS, same as svc-card) ── */
+    .sit-border-svg {
+      position: absolute;
+      inset: 0; width: 100%; height: 100%;
+      overflow: visible;
+      pointer-events: none; z-index: 2;
+    }
+    .sit-card path.sit-border-path {
+      stroke: rgba(26,26,26,0.22);
+      fill: none;
+      stroke-width: 1.8px;
+    }
+    .sit-card.on:hover path.sit-border-path {
+      stroke: rgba(26,122,82,0.75);
+      transition: stroke 0.25s;
+    }
+
+    .sit-quote {
+      font-family: 'Fraunces', serif;
+      font-style: italic; font-weight: 600;
+      font-size: 15.5px; line-height: 1.38;
+      color: #1A1A1A; margin-bottom: 12px;
+    }
+    .sit-desc {
+      font-family: 'Onest', sans-serif;
+      font-size: 13.5px; line-height: 1.72;
+      color: #555;
+    }
+
+    /* ── CTA ── */
+    .sit-cta { margin-top: 56px; position: relative; z-index: 1; }
+
+    /* ══════════════════════════════════════════════════════════
+       PROCESS — "Как устроена работа" — light timeline
+       ══════════════════════════════════════════════════════════ */
+    .process {
+      padding: 72px 48px 48px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .proc-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .proc-eyebrow {
+      display: block;
+      font-family: 'Caveat', cursive;
+      font-size: 20px; font-weight: 700;
+      color: var(--honey);
+      margin-bottom: 14px;
+      opacity: 0.9;
+    }
+    .proc-header h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: clamp(30px, 3.2vw, 52px);
+      line-height: 1.06; letter-spacing: -0.03em;
+      color: #323232;
+      margin-bottom: 18px;
+    }
+    .proc-header p {
+      font-family: 'Onest', sans-serif;
+      font-size: 15.5px; line-height: 1.76;
+      color: var(--ink-mid);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ── Timeline container ── */
+    .proc-timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Full zigzag chain image — white bg removed via multiply */
+    .proc-zigzag {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      height: 100%;
+      width: auto;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Each step row ── */
+    .proc-step {
+      display: grid;
+      grid-template-columns: 1fr 300px 1fr;
+      align-items: center;
+      min-height: 72px;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1);
+    }
+    .proc-step.on { opacity: 1; transform: translateY(0); }
+
+    /* Content: odd = left col, even = right col */
+    .proc-content {
+      padding: 10px 0;
+    }
+    .proc-step:nth-child(odd)  .proc-content { grid-column: 1; padding-right: 48px; text-align: right; }
+    .proc-step:nth-child(even) .proc-content { grid-column: 3; padding-left: 48px; }
+
+    /* ── Text inside content block ── */
+    .proc-label {
+      display: block;
+      font-family: 'Caveat', cursive;
+      font-size: 13.5px; font-weight: 700;
+      color: var(--honey);
+      letter-spacing: 0.07em;
+      margin-bottom: 5px;
+    }
+    .proc-step-title {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: 19px; line-height: 1.22; letter-spacing: -0.018em;
+      color: #323232;
+      margin-bottom: 8px;
+    }
+    .proc-step-last .proc-step-title { color: var(--honey-d); }
+
+    .proc-step-desc {
+      font-family: 'Onest', sans-serif;
+      font-size: 14px; line-height: 1.72;
+      color: var(--ink-mid);
+      margin-bottom: 10px;
+    }
+    .proc-meta {
+      display: inline-block;
+      font-family: 'Onest', sans-serif;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 0.09em; text-transform: uppercase;
+      color: rgba(80,80,80,0.7);
+      border: 1px solid rgba(26,26,26,0.14);
+      border-radius: 4px;
+      padding: 3px 8px;
+    }
+    .proc-step-last .proc-meta {
+      color: var(--honey-d);
+      border-color: rgba(19,92,60,0.35);
+      background: rgba(26,122,82,0.07);
+    }
+
+    @media (max-width: 720px) {
+      .process { padding: 64px 24px 72px; }
+      .proc-header { margin-bottom: 56px; }
+      .proc-zigzag { display: none; }
+      .proc-step {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        margin-bottom: 32px;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(26,26,26,0.09);
+      }
+      .proc-step:nth-child(odd) .proc-content,
+      .proc-step:nth-child(even) .proc-content {
+        grid-column: 1; padding: 0; text-align: left;
+      }
+    }
+
+    /* ═══════════════════════════════════════════ ПОЧЕМУ МЫ */
+    .why {
+      padding: 96px 48px 48px;
+      max-width: 1320px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .why-head {
+      max-width: 560px;
+      margin-bottom: 64px;
+    }
+    .decor--why-lines {
+      position: absolute;
+      left: 640px;
+      top: 120px;
+      transform: rotate(-2deg);
+      width: 360px;
+      opacity: 0.18;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .why-eyebrow {
+      display: block;
+      font-family: 'Caveat', cursive;
+      font-size: 16px; font-weight: 700;
+      color: var(--honey);
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
+    }
+    .why h2, .plans-head h2, .guarantee-inner h2, .contact-left h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(26px, 3vw, 40px);
+      font-weight: 400;
+      color: #323232;
+      letter-spacing: -0.02em;
+      line-height: 1.17;
+      margin-bottom: 14px;
+    }
+    .why h2 em, .plans-head h2 em, .guarantee-inner h2 em, .contact-left h2 em {
+      font-style: italic; color: var(--honey-d);
+    }
+    .why-head p {
+      font-family: 'Onest', sans-serif;
+      font-size: 15px; line-height: 1.7;
+      color: var(--ink-mid);
+    }
+
+    /* ═══ WHY BENTO GRID (ported from Claude Design layout, our card style) ═══ */
+    .why-bento {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 22px;
+    }
+    .why-card {
+      position: relative;
+      background: #fff;
+      border: 1px solid rgba(26,26,26,0.12);
+      border-radius: 6px;
+      padding: 32px 30px;
+      overflow: hidden;
+      isolation: isolate;
+      display: flex;
+      flex-direction: column;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1);
+    }
+    .why-card.on { opacity: 1; transform: translateY(0); }
+    .why-card--dark { border-color: rgba(255,255,255,0.18); }
+
+    .why-card--principle { grid-column: span 6; grid-row: span 2; padding: 42px 42px 38px; }
+    .why-card--01        { grid-column: span 6; }
+    .why-card--key       { grid-column: span 3; }
+    .why-card-stairs {
+      position: absolute;
+      bottom: -30px;
+      left: 20px;
+      width: 300px;
+      filter: invert(1);
+      mix-blend-mode: screen;
+      opacity: 0.45;
+      pointer-events: none;
+      user-select: none;
+    }
+    .why-card-seal {
+      position: absolute;
+      bottom: -40px;
+      left: 20px;
+      width: 240px;
+      opacity: 0.8;
+      pointer-events: none;
+      user-select: none;
+    }
+    .why-card--dark       { grid-column: span 3; background: var(--honey-d); color: #EDEFF3; }
+
+    .why-card-top {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .why-card--principle .why-card-top { margin-bottom: auto; }
+    .why-card-tag {
+      font-family: 'Caveat', cursive;
+      font-weight: 600;
+      font-size: 19px; letter-spacing: 0.02em;
+      color: var(--honey-d);
+    }
+    .why-card-check { width: 30px; height: auto; }
+
+    .why-card-hourglass {
+      width: 210px;
+      margin: 20px auto 30px;
+      align-self: center;
+      transform: rotate(-5deg);
+    }
+    .why-card-hourglass img {
+      width: 100%; display: block;
+      filter: contrast(1.06) brightness(0.94);
+    }
+
+    .why-card-title {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: clamp(26px, 2.6vw, 33px);
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      color: #323232;
+      margin: 0 0 14px;
+    }
+    .why-card-title em { font-style: italic; color: var(--honey-d); }
+    .why-card-desc {
+      font-family: 'Onest', sans-serif;
+      font-size: 15.5px; line-height: 1.66;
+      color: var(--ink-mid);
+      max-width: 420px;
+    }
+
+    .why-card-label {
+      display: block;
+      min-height: 14px;
+      margin-bottom: 18px;
+    }
+    .why-card-num {
+      font-family: 'Onest', sans-serif;
+      font-size: 11px; letter-spacing: 0.16em;
+      color: var(--ink-low);
+    }
+    .why-card-num--light { color: rgba(237,239,243,0.65); }
+
+    .why-card-title-sm {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: 22px; line-height: 1.18;
+      color: #323232;
+      margin: 12px 0 10px;
+    }
+    .why-card-title-sm--light { color: #F6F6F4; }
+    .why-card-desc-sm {
+      font-family: 'Onest', sans-serif;
+      font-size: 14.5px; line-height: 1.6;
+      color: #5a5954;
+      margin: 0;
+    }
+    .why-card-desc-sm--light { color: rgba(237,239,243,0.82); }
+
+    /* CTA — boxless, closing accent rule */
+    .why-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      margin-top: 64px;
+      padding-top: 28px;
+      border-top: 3px solid var(--honey);
+      opacity: 0; transform: translateY(16px);
+      transition: opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1);
+    }
+    .why-cta.on { opacity: 1; transform: translateY(0); }
+    .why-cta-text { max-width: 460px; }
+    .why-cta-title {
+      font-family: 'Fraunces', serif;
+      font-size: 19px; font-weight: 400;
+      color: #323232;
+      margin-bottom: 6px;
+    }
+    .why-cta-desc {
+      font-family: 'Onest', sans-serif;
+      font-size: 14px; line-height: 1.65;
+      color: var(--ink-mid);
+    }
+    .why-cta-btn { flex-shrink: 0; }
+
+    /* ═══════════════════════════════════════════ ЭКСПЕРТИЗА (АРБИТРАЖ) */
+    .expertise {
+      padding: 96px 48px 104px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+    .expertise-inner {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .expertise-left h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(26px, 3vw, 40px);
+      font-weight: 400;
+      color: #323232;
+      letter-spacing: -0.02em;
+      line-height: 1.17;
+      margin-bottom: 14px;
+    }
+    .expertise-left h2 em { font-style: italic; color: var(--honey-d); }
+    .expertise-lead {
+      font-family: 'Onest', sans-serif;
+      font-size: 15px; line-height: 1.7;
+      color: var(--ink-mid);
+      max-width: 480px;
+      margin-bottom: 32px;
+    }
+    .expertise-features { display: flex; flex-direction: column; gap: 22px; }
+    .expertise-feature { display: flex; align-items: flex-start; gap: 16px; }
+    .expertise-feature-icon {
+      width: 30px; height: auto; flex-shrink: 0; margin-top: 2px;
+      filter: contrast(1.06) brightness(0.94);
+    }
+    .expertise-feature h4 {
+      font-family: 'Fraunces', serif;
+      font-weight: 400; font-size: 19px;
+      margin: 0 0 4px; color: #323232;
+    }
+    .expertise-feature p {
+      font-family: 'Onest', sans-serif;
+      font-size: 14.5px; line-height: 1.55;
+      color: var(--ink-mid); margin: 0;
+    }
+
+    .expertise-card {
+      position: relative;
+      background: var(--honey-d);
+      color: #EDEFF3;
+      border-radius: 6px;
+      padding: 44px 44px 40px;
+      overflow: hidden;
+      isolation: isolate;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1);
+    }
+    .expertise-card.on { opacity: 1; transform: translateY(0); }
+    .expertise-border-svg {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      overflow: visible; pointer-events: none; z-index: 2;
+    }
+    .expertise-card path.expertise-card-border-path {
+      stroke: rgba(255,255,255,0.3); fill: none; stroke-width: 1px;
+    }
+    .expertise-card-top {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 30px; position: relative; z-index: 1;
+    }
+    .expertise-card-label {
+      font-family: 'Onest', sans-serif;
+      font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: #A3AEBD;
+    }
+    .expertise-card-check { width: 32px; height: auto; filter: brightness(0) invert(1); opacity: 0.85; }
+    .expertise-card-title {
+      font-family: 'Fraunces', serif;
+      font-weight: 400; font-size: 30px; line-height: 1.1;
+      margin: 0 0 28px; color: #F6F6F4;
+      position: relative; z-index: 1;
+    }
+    .expertise-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 26px 32px;
+      border-top: 1px solid rgba(255,255,255,0.16); padding-top: 28px;
+      position: relative; z-index: 1;
+    }
+    .expertise-stat-num {
+      font-family: 'Fraunces', serif;
+      font-weight: 600; font-size: 38px; line-height: 1;
+      margin-bottom: 6px; color: #F6F6F4;
+    }
+    .expertise-stat-label {
+      font-family: 'Onest', sans-serif;
+      font-size: 13.5px; color: rgba(231,236,244,0.78); line-height: 1.4;
+    }
+
+    /* ═══════════════════════════════════════════ КЕЙСЫ */
+    .cases {
+      background: var(--honey-d);
+      padding: 64px 0 56px;
+    }
+    .cases-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    .cases-head { margin-bottom: 52px; }
+    .cases-eyebrow {
+      display: block;
+      font-family: 'Caveat', cursive;
+      font-size: 16px; font-weight: 700;
+      color: #A3AEBD;
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
+    }
+    .cases-head h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: clamp(28px, 3.4vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      color: #F2F2EE;
+      margin: 0;
+    }
+    .cases-head h2 em { font-style: italic; color: #A3AEBD; }
+
+    .case-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .case-card, .case-stat-card {
+      --i: 0;
+      position: relative;
+      isolation: isolate;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1);
+      transition-delay: calc(var(--i) * 0.1s);
+    }
+    .case-card.on, .case-stat-card.on { opacity: 1; transform: translateY(0); }
+
+    /* ── Precedent feature card ── */
+    .case-card--hero {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      background: #F6F5F1;
+      border: 1px solid rgba(26,26,26,0.10);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .case-card-side {
+      position: relative;
+      padding: 40px 36px;
+      background: #EFEEE9;
+      border-right: 1px solid #D8D8D4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 30px;
+      z-index: 1;
+    }
+    .case-card-num {
+      font-family: 'Onest', sans-serif;
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #8c8b84; margin-bottom: 6px;
+    }
+    .case-card-eyebrow {
+      display: inline-block;
+      font-family: 'Onest', sans-serif;
+      font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--honey-d);
+      border: 1.5px solid var(--honey-d);
+      padding: 7px 14px; border-radius: 2px;
+      transform: rotate(-3deg);
+    }
+    .case-card-checks {
+      display: flex; flex-direction: column; gap: 10px;
+      font-family: 'Onest', sans-serif;
+      font-size: 13px; color: #5a5954;
+    }
+    .case-card-checks span { display: flex; align-items: center; gap: 8px; }
+    .case-card-checks span::before { content: '✓'; color: var(--honey-d); }
+    .case-card-main {
+      position: relative;
+      padding: 44px 48px;
+      overflow: hidden;
+    }
+    .case-card-title {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: #323232;
+      position: relative;
+      z-index: 1;
+    }
+    .case-card-desc {
+      font-family: 'Onest', sans-serif;
+      line-height: 1.62;
+      color: #4f4e4a;
+      position: relative;
+      z-index: 1;
+    }
+    .case-card--hero .case-card-title { font-size: clamp(24px,2.8vw,34px); margin-bottom: 16px; max-width: 560px; }
+    .case-card--hero .case-card-desc { font-size: 16px; max-width: 560px; }
+    .case-card-icon {
+      position: absolute;
+      right: -20px;
+      bottom: -20px;
+      width: 280px;
+      opacity: 0.22;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .case-card-icon img { width: 100%; display: block; }
+
+    /* ── 3-card stat row ── */
+    .case-row3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .case-stat-card {
+      background: #F6F5F1;
+      color: var(--ink);
+      border: 1px solid rgba(26,26,26,0.10);
+      border-radius: 6px;
+      padding: 34px 32px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .case-stat-card--dark {
+      background: var(--honey-d);
+      color: #EDEFF3;
+      border-color: rgba(255,255,255,0.18);
+    }
+    .case-stat-label {
+      font-family: 'Caveat', cursive;
+      font-weight: 600;
+      font-size: 16px; letter-spacing: 0.02em;
+      color: #8c8b84;
+      margin-bottom: 18px;
+      position: relative; z-index: 1;
+    }
+    .case-stat-card--dark .case-stat-label { color: rgba(237,239,243,0.6); }
+    .case-stat-num {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 44px;
+      line-height: 1;
+      color: var(--honey-d);
+      margin-bottom: 14px;
+      position: relative; z-index: 1;
+    }
+    .case-stat-card--dark .case-stat-num { color: #F6F6F4; }
+    .case-stat-title {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: 21px;
+      line-height: 1.16;
+      margin: 0 0 12px;
+      color: #323232;
+      position: relative; z-index: 1;
+    }
+    .case-stat-card--dark .case-stat-title { color: #F6F6F4; }
+    .case-stat-desc {
+      font-family: 'Onest', sans-serif;
+      font-size: 14.5px;
+      line-height: 1.58;
+      color: #5a5954;
+      margin: 0;
+      position: relative; z-index: 1;
+    }
+    .case-stat-card--dark .case-stat-desc { color: rgba(237,239,243,0.82); }
+
+    /* ═══════════════════════════════════════════ ТАРИФЫ */
+    .plans {
+      padding: 32px 48px 64px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+    .plans-head {
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 40px;
+    }
+    .plans-head-text {
+      flex: 0 1 600px;
+    }
+    .plans-head p {
+      font-family: 'Onest', sans-serif;
+      font-size: 15px; line-height: 1.7;
+      color: var(--ink-mid);
+      max-width: 540px;
+      margin-top: 12px;
+    }
+    .plans-head-icon {
+      position: relative;
+      width: 150px;
+      flex-shrink: 0;
+      transform: rotate(-48deg);
+      margin-top: 40px;
+      margin-left: 180px;
+      opacity: 0;
+      transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1);
+    }
+    .plans-head.on .plans-head-icon { opacity: 1; }
+    .plans-head-icon img {
+      width: 100%; display: block;
+      filter: contrast(1.06) brightness(0.94);
+    }
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .plan-card {
+      background: #fff;
+      border: 1px solid rgba(26,26,26,0.1);
+      border-top: 3px solid rgba(26,26,26,0.15);
+      border-radius: 4px;
+      display: flex; flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1), box-shadow .2s;
+    }
+    .plan-card.on { opacity: 1; transform: translateY(0); }
+    .plan-card.on:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(26,26,26,0.10);
+    }
+    .plan-card--featured {
+      background: var(--honey-d);
+      border-color: var(--honey-d);
+      border-top: 3px solid #E8A020;
+    }
+    .plan-badge {
+      position: absolute; top: 16px; right: 16px;
+      font-family: 'Caveat', cursive;
+      font-size: 13px; font-weight: 700;
+      color: var(--honey-d);
+      background: #fff;
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 20px;
+      padding: 2px 10px;
+    }
+    .plan-top { padding: 32px 28px 20px; }
+    .plan-name {
+      font-family: 'Fraunces', serif;
+      font-size: 22px; font-weight: 400;
+      color: #323232;
+      margin-bottom: 5px;
+    }
+    .plan-card--featured .plan-name { color: #EDEFF3; }
+    .plan-desc {
+      font-family: 'Onest', sans-serif;
+      font-size: 12.5px; color: var(--ink-low);
+      margin-bottom: 18px;
+    }
+    .plan-card--featured .plan-desc { color: rgba(237,239,243,0.6); }
+    .plan-price {
+      font-family: 'Fraunces', serif;
+      font-size: 34px; font-weight: 700; letter-spacing: -0.02em;
+      color: var(--honey-d);
+    }
+    .plan-card--featured .plan-price { color: #fff; }
+    .plan-period {
+      font-family: 'Onest', sans-serif;
+      font-size: 11px; color: var(--ink-low);
+      margin-top: 4px;
+    }
+    .plan-card--featured .plan-period { color: rgba(237,239,243,0.5); }
+    .plan-rows { padding: 4px 28px 12px; flex: 1; }
+    .plan-row {
+      display: flex; flex-direction: column; gap: 3px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(26,26,26,0.07);
+    }
+    .plan-card--featured .plan-row { border-bottom-color: rgba(255,255,255,0.1); }
+    .plan-row:last-child { border-bottom: none; }
+    .plan-row-label {
+      font-family: 'Onest', sans-serif;
+      font-size: 12px; line-height: 1.4;
+      color: var(--ink-mid);
+    }
+    .plan-card--featured .plan-row-label { color: rgba(237,239,243,0.55); }
+    .plan-val {
+      font-family: 'Onest', sans-serif;
+      font-size: 13.5px; font-weight: 600;
+      color: var(--ink);
+    }
+    .plan-card--featured .plan-val { color: #EDEFF3; }
+    .plan-val--yes { color: var(--honey-d); }
+    .plan-card--featured .plan-val--yes { color: #E8A020; }
+    .plan-val--no  { color: var(--ink-low); font-weight: 400; }
+    .plan-foot { padding: 16px 28px 26px; }
+    .plan-btn {
+      width: 100%;
+      font-family: 'Onest', sans-serif;
+      font-weight: 600; font-size: 14px;
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid rgba(26,26,26,0.22);
+      border-radius: 4px;
+      padding: 13px 20px;
+      cursor: pointer;
+      transition: background .18s, color .18s, border-color .18s, transform .14s;
+    }
+    .plan-btn:hover {
+      background: var(--honey-d);
+      color: #fff;
+      border-color: var(--honey-d);
+      transform: translateY(-1px);
+    }
+    .plan-card--featured .plan-btn {
+      background: #E8A020;
+      color: #fff;
+      border-color: #E8A020;
+    }
+    .plan-card--featured .plan-btn:hover {
+      background: #cf8f18;
+      border-color: #cf8f18;
+    }
+    .plans-note {
+      font-family: 'Caveat', cursive;
+      font-size: 17px; color: var(--ink-low);
+      text-align: center;
+    }
+
+    /* ═══════════════════════════════════════════ ГАРАНТИЯ */
+    .guarantee {
+      display: block;
+      max-width: none;
+      background: rgba(26,26,26,0.03);
+      border-top: 1px solid rgba(26,26,26,0.07);
+      border-bottom: 1px solid rgba(26,26,26,0.07);
+      padding: 96px 48px 104px;
+    }
+    .guarantee-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 80px;
+      align-items: center;
+    }
+    .guarantee-text p {
+      font-family: 'Onest', sans-serif;
+      font-size: 15px; line-height: 1.75;
+      color: var(--ink-mid);
+      margin-top: 18px;
+    }
+    .guarantee-text strong { color: var(--ink); font-weight: 600; }
+    .guarantee-visual {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 20px;
+      text-align: center;
+    }
+    .guarantee-bee {
+      width: 360px; height: auto;
+      animation: hg-float 6s ease-in-out infinite;
+    }
+    .guarantee-label {
+      font-family: 'Fraunces', serif;
+      font-size: 16px; font-weight: 700;
+      color: var(--ink);
+      line-height: 1.4;
+      max-width: 300px;
+    }
+    .guarantee-note {
+      font-family: 'Caveat', cursive;
+      font-size: 16px; color: var(--ink-low);
+      line-height: 1.5;
+    }
+
+    /* ═══════════════════════════════════════════ КОНТАКТЫ */
+    .contact {
+      background: var(--paper);
+      padding: 96px 48px 104px;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-bee-bg {
+      position: absolute;
+      left: -60px; bottom: 10px;
+      width: 280px;
+      opacity: 0.07;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .contact-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+    .contact-left h2 { color: var(--ink); }
+    .contact-left h2 em { font-style: italic; color: var(--honey-d); }
+    .contact-sub {
+      font-family: 'Onest', sans-serif;
+      font-size: 15px; color: var(--ink-mid);
+      max-width: 420px;
+      margin-bottom: 36px;
+    }
+    .contact-channels {
+      display: flex; flex-direction: column; gap: 22px;
+      border-top: 1px solid rgba(26,26,26,0.12);
+      padding-top: 30px;
+      margin-bottom: 18px;
+    }
+    .contact-channel-item { display: flex; flex-direction: column; gap: 6px; }
+    .contact-channel-label {
+      font-family: 'Onest', sans-serif;
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--ink-low);
+    }
+    .contact-channel-val {
+      font-family: 'Fraunces', serif;
+      font-size: 25px; font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .contact-channel-val:hover { color: var(--honey-d); }
+    .contact-hours {
+      font-family: 'Onest', sans-serif;
+      font-size: 14px; color: var(--ink-mid);
+      margin: 4px 0 0;
+    }
+
+    .contact-form-card {
+      position: relative;
+      background: #fff;
+      border: 1px solid rgba(26,26,26,0.12);
+      border-radius: 6px;
+      padding: 40px;
+      overflow: hidden;
+      isolation: isolate;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1);
+    }
+    .contact-form-card.on { opacity: 1; transform: translateY(0); }
+    .contact-form-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+      margin-bottom: 18px; position: relative; z-index: 1;
+    }
+    .cfield { display: flex; flex-direction: column; gap: 8px; position: relative; z-index: 1; }
+    .cfield--full { margin-bottom: 24px; }
+    .cfield-label {
+      font-family: 'Onest', sans-serif;
+      font-size: 12.5px; font-weight: 600;
+      color: #5a5954; letter-spacing: 0.02em;
+    }
+    .contact-form-card input,
+    .contact-form-card textarea {
+      width: 100%; box-sizing: border-box;
+      font-family: 'Onest', sans-serif;
+      font-size: 15px;
+      padding: 13px 14px;
+      border: 1px solid rgba(26,26,26,0.16);
+      border-radius: 3px;
+      background: var(--paper);
+      color: var(--ink);
+      outline: none;
+      transition: border-color .18s;
+    }
+    .contact-form-card input::placeholder,
+    .contact-form-card textarea::placeholder { color: rgba(26,26,26,0.3); }
+    .contact-form-card input:focus,
+    .contact-form-card textarea:focus { border-color: var(--honey-d); }
+    .contact-form-card textarea { min-height: 100px; resize: vertical; }
+    .contact-btn {
+      width: 100%;
+      background: var(--honey-d);
+      color: #fff;
+      border: none; border-radius: 3px;
+      padding: 16px;
+      font-family: 'Onest', sans-serif;
+      font-weight: 600; font-size: 15px;
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      transition: filter .2s;
+      position: relative; z-index: 1;
+    }
+    .contact-btn:hover { filter: brightness(1.12); }
+    .contact-privacy {
+      font-family: 'Onest', sans-serif;
+      font-size: 12px; color: #9b9a93;
+      text-align: center;
+      line-height: 1.5;
+      margin: 14px 0 0;
+      position: relative; z-index: 1;
+    }
+
+    /* ═══════════════════════════════════════════ MODAL */
+    /* ── Декор ── */
+    .decor {
+      position: absolute;
+      pointer-events: none;
+      user-select: none;
+      mix-blend-mode: multiply;
+      z-index: 0;
+    }
+    /* Услуги: штрих справа от заголовка */
+    .decor--svc-stroke {
+      width: 380px;
+      opacity: 0.22;
+      transform: rotate(-3deg);
+      align-self: center;
+      margin-right: -40px;
+      flex-shrink: 0;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+    /* Услуги: завиток в карточке 01 */
+    .decor--svc-swirl {
+      bottom: 30px; right: -20px;
+      width: 190px;
+      opacity: 0.06;
+      transform: rotate(15deg);
+    }
+    /* Контакты: самолётик */
+    .decor--contact-plane {
+      top: 0; right: 20px;
+      width: 110px;
+      opacity: 0.32;
+      transform: rotate(-8deg);
+    }
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(15,20,30,0.52);
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px 16px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s cubic-bezier(.16,1,.3,1);
+      overflow-y: auto;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-card {
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid rgba(26,26,26,0.10);
+      padding: 40px 36px 36px;
+      width: 100%; max-width: 460px;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      position: relative;
+      transform: translateY(20px) scale(0.97);
+      transition: transform .35s cubic-bezier(.16,1,.3,1);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+    .modal-overlay.open .modal-card { transform: translateY(0) scale(1); }
+    .modal-close {
+      position: absolute; top: 14px; right: 16px;
+      width: 30px; height: 30px;
+      background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--ink-low); font-size: 20px; line-height: 1;
+      border-radius: 50%; transition: background .15s, color .15s;
+    }
+    .modal-close:hover { background: rgba(26,26,26,0.06); color: var(--ink); }
+    .modal-eyebrow {
+      font-family: 'Caveat', cursive; font-size: 17px; font-weight: 700;
+      color: var(--honey); margin-bottom: 6px; display: block;
+    }
+    .modal-title {
+      font-family: 'Fraunces', serif; font-weight: 400;
+      font-size: 26px; line-height: 1.14; letter-spacing: -0.025em;
+      color: #323232; margin-bottom: 4px;
+    }
+    .modal-title em { font-style: italic; }
+    .modal-subtitle {
+      font-family: 'Onest', sans-serif; font-size: 13.5px;
+      color: var(--ink-mid); margin-bottom: 24px; line-height: 1.6;
+    }
+    .modal-row {
+      display: flex; gap: 12px; margin-bottom: 12px;
+    }
+    .modal-field {
+      display: flex; flex-direction: column; gap: 5px;
+      flex: 1; min-width: 0;
+    }
+    .modal-field label {
+      font-family: 'Onest', sans-serif; font-size: 11.5px; font-weight: 500;
+      color: var(--ink-mid); letter-spacing: 0.03em; text-transform: uppercase;
+    }
+    .modal-field input,
+    .modal-field textarea {
+      font-family: 'Onest', sans-serif; font-size: 14px;
+      color: var(--ink); background: var(--paper);
+      border: 1px solid rgba(26,26,26,0.15); border-radius: 5px;
+      padding: 11px 13px; outline: none; width: 100%; box-sizing: border-box;
+      transition: border-color .18s;
+    }
+    .modal-field input:focus,
+    .modal-field textarea:focus { border-color: var(--honey); }
+    .modal-field input::placeholder,
+    .modal-field textarea::placeholder { color: rgba(26,26,26,0.28); }
+    .modal-field textarea { min-height: 88px; resize: vertical; margin-bottom: 0; }
+    .modal-submit {
+      width: 100%; margin-top: 16px;
+      background: var(--honey-d); color: #fff;
+      border: none; border-radius: 5px;
+      padding: 15px; font-family: 'Onest', sans-serif;
+      font-weight: 600; font-size: 15px; cursor: pointer;
+      letter-spacing: 0.01em; transition: filter .2s, transform .15s;
+    }
+    .modal-submit:hover { filter: brightness(1.1); transform: translateY(-1px); }
+    .modal-privacy {
+      font-family: 'Onest', sans-serif; font-size: 11px;
+      color: rgba(26,26,26,0.35); text-align: center;
+      margin-top: 10px; line-height: 1.5;
+    }
+    @media (max-width: 500px) {
+      .modal-card { padding: 32px 20px 28px; }
+      .modal-row { flex-direction: column; }
+    }
+
+    /* ═══════════════════════════════════════════ FOOTER */
+    .site-footer {
+      background: #15140f;
+      padding: 72px 64px 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+    .footer-brand-top {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 20px;
+    }
+    .footer-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: #F6F5F1;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; flex-shrink: 0;
+    }
+    .footer-avatar img { width: 28px; height: auto; filter: contrast(1.06) brightness(0.94); transform: translateY(1px); }
+    .footer-logo {
+      font-family: 'Fraunces', serif;
+      font-weight: 600; font-size: 23px;
+      color: #F2F2EE;
+    }
+    .footer-logo span { color: #A3AEBD; }
+    .footer-desc {
+      font-family: 'Onest', sans-serif;
+      font-size: 14.5px; color: rgba(255,255,255,0.4);
+      line-height: 1.6; margin-bottom: 16px;
+      max-width: 320px;
+    }
+    .footer-slogan {
+      font-family: 'Caveat', cursive;
+      font-weight: 600;
+      font-size: 21px; color: rgba(255,255,255,0.7);
+    }
+    .footer-col-title {
+      font-family: 'Onest', sans-serif;
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 18px;
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a, .footer-static {
+      font-family: 'Onest', sans-serif;
+      font-size: 14.5px; color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color .18s;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-bottom {
+      max-width: 1320px;
+      margin: 24px auto 0;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-copy {
+      font-family: 'Onest', sans-serif;
+      font-size: 12.5px; color: rgba(255,255,255,0.3);
+    }
+
+    /* ═══════════════════════════════════════════ SCROLL REVEAL (shared) */
+    .rv {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1);
+    }
+    .rv.on { opacity: 1; transform: translateY(0); }
+
+    /* ═══════════════════════════════════════════ RESPONSIVE */
+    @media (max-width: 880px) {
+      nav { padding: 0 20px; }
+      .nav-burger { display: flex; }
+      .nav-collapse { display: none; }
+      nav.nav-open .nav-collapse {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+        position: fixed;
+        top: 64px; left: 0; right: 0;
+        max-height: calc(100vh - 64px);
+        overflow-y: auto;
+        background: #F9F9F7;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+        padding: 28px 24px 36px;
+        box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+      }
+      nav.nav-open .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        margin: 0;
+        width: 100%;
+      }
+      nav.nav-open .nav-links a { font-size: 18px; }
+      nav.nav-open .nav-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        width: 100%;
+      }
+      nav.nav-open .nav-btn { width: 100%; justify-content: center; }
+    }
+    @media (max-width: 900px) {
+      /* ── Hero ── */
+      .hero-bg-img { object-position: 70% center; opacity: 0.18; }
+      .hero-bg-scrim { background: rgba(249,249,247,0.92); }
+      .hero-deco-line { display: none; }
+      .hero-left {
+        width: 100%;
+        padding: 88px 24px 52px;
+      }
+      .hero-trust-row { gap: 14px; }
+      .hero-trust-text { font-size: 11.5px; }
+      .hero-chips-bar { gap: 8px; }
+
+      /* ── О нас ── */
+      .why { padding: 64px 24px 72px; }
+      .decor--why-lines { display: none; }
+      .why-card-seal { display: none; }
+      .why-bento { grid-template-columns: 1fr; }
+      .why-bento > * { grid-column: auto !important; grid-row: auto !important; }
+      .why-card--principle { padding: 26px 22px; }
+      .why-card-hourglass { width: 150px; margin: 18px 0 24px; }
+      .why-card-title { font-size: 24px; }
+      .why-cta { flex-direction: column; align-items: flex-start; gap: 18px; }
+      .why-cta-text { max-width: 100%; }
+      /* ── Услуги ── */
+      .svc-header { flex-direction: column; align-items: flex-start; }
+      .decor--svc-stroke { display: none; }
+      .svc-card--01 .svc-illustration { width: 280px; right: -20px; opacity: 0.22; }
+      .svc-grid { grid-template-columns: 1fr; }
+      .svc-grid > * { grid-column: auto !important; grid-row: auto !important; }
+      .svc-bee-deco { display: none; }
+      .svc-card--01, .svc-card--04 { padding: 26px 22px; }
+      .svc-card--01 .svc-card-title { font-size: 26px; }
+      .svc-card--04 .svc-card-title { font-size: 21px; white-space: normal; }
+      .svc-card--04-row { grid-template-columns: 1fr; gap: 16px; }
+      .svc-card--04-left { width: 100%; }
+      .expertise { padding: 64px 24px 72px; }
+      .expertise-inner { grid-template-columns: 1fr; gap: 40px; }
+      .expertise-card { padding: 32px 26px; }
+      .expertise-stats { gap: 22px 24px; }
+      .cases { padding: 56px 0 64px; }
+      .cases-inner { padding: 0 24px; }
+      .case-card--hero { grid-template-columns: 1fr; }
+      .case-card-side { border-right: none; border-bottom: 1px solid #D8D8D4; padding: 28px 26px; flex-direction: row; align-items: center; justify-content: space-between; gap: 18px; }
+      .case-card-main { padding: 30px 26px; }
+      .case-card-icon { width: 140px; }
+      .case-row3 { grid-template-columns: 1fr; }
+      .plans { padding: 56px 24px 64px; }
+      .plans-head-icon { display: none; }
+      .plans-grid { grid-template-columns: 1fr; }
+      .guarantee { padding: 64px 24px 72px; }
+      .guarantee-inner { grid-template-columns: 1fr; gap: 40px; }
+      .guarantee-visual { order: -1; }
+      .contact { padding: 64px 24px 72px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+      .contact-form-card { padding: 28px 24px; }
+      .contact-form-grid { grid-template-columns: 1fr; }
+      .site-footer { padding: 56px 24px 40px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ═══ SVG FILTER DEFINITIONS ═══ -->
+<svg class="svg-defs" aria-hidden="true">
+  <defs>
+    <!--
+      Chip border wobble.
+      Large x/y/width/height margins so displaced pixels aren't clipped.
+    -->
+    <filter id="rough-chip" x="-12%" y="-25%" width="124%" height="150%">
+      <feTurbulence type="fractalNoise"
+                    baseFrequency="0.030 0.040"
+                    numOctaves="3" seed="5" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise"
+                         scale="2.8"
+                         xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-mark" aria-hidden="true">
+      <img src="./bee.png" alt="">
+    </span>
+    <span class="nav-logo-text">
+      <span class="nav-logo-name"><em>Bee</em>Consulting</span>
+    </span>
+  </a>
+  <div class="nav-collapse">
+    <ul class="nav-links">
+      <li><a href="#услуги">Услуги</a></li>
+      <li><a href="#о-нас">О нас</a></li>
+      <li><a href="#кейсы">Результаты</a></li>
+      <li><a href="#тарифы">Тарифы</a></li>
+      <li><a href="#контакты">Контакты</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+74950000000" class="nav-phone">+7 (495) 000-00-00</a>
+      <div class="nav-messengers">
+        <a href="https://t.me/" target="_blank" aria-label="Telegram">
+          <img src="./icon-telegram-sketch.png" alt="" width="32" height="32">
+        </a>
+        <a href="https://max.ru/" target="_blank" aria-label="Max">
+          <img src="./icon-max-sketch.png" alt="" width="32" height="32">
+        </a>
+      </div>
+      <a href="#" class="nav-btn" onclick="openModal();return false;">Заказать звонок</a>
+    </div>
+  </div>
+  <button class="nav-burger" type="button" aria-label="Меню" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+
+  <img class="hero-bg-img" src="./hero-scales-v2.png" alt="" aria-hidden="true">
+  <div class="hero-bg-scrim" aria-hidden="true"></div>
+
+  <!-- Left: text -->
+  <div class="hero-left" style="position:relative">
+    <h1 class="rv d1">
+      Решаем<br>
+      юридические вопросы.<br>
+      Даже когда кажется, что <em>нет&nbsp;выхода.</em>
+    </h1>
+    <hr class="hero-rule">
+    <p class="subhead rv d2">
+      Защищаем бизнес и частных лиц в самых сложных спорах.
+      Беремся за дела, от которых отказались другие, —
+      и доводим до результата.
+    </p>
+    <div class="cta-row rv d3">
+      <a href="#" class="btn-primary" onclick="openModal();return false;">
+        Получить консультацию
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+          <path d="M2.5 7.5h10m-4.5-4.5 4.5 4.5-4.5 4.5"
+                stroke="currentColor" stroke-width="1.6"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <div class="hero-trust-item">
+        <span class="hero-trust-icon"><img src="./icon-shield-lock.png" alt=""></span>
+        <span class="hero-trust-text"><strong>Конфиденциально</strong>Полная защита данных</span>
+      </div>
+    </div>
+
+    <div class="hero-chips-bar">
+      <span class="hero-chip-item">Корпоративное право</span>
+      <span class="hero-chip-item">Судебные споры</span>
+      <span class="hero-chip-item">Договорная работа</span>
+      <span class="hero-chip-item">Банкротство</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════ ПОЧЕМУ МЫ -->
+<section class="why" id="о-нас">
+  <div class="why-head">
+    <span class="why-eyebrow">— почему BeeConsulting</span>
+    <h2>Мы не обещаем победу.<br><em>Мы её добиваемся.</em></h2>
+    <p>Не потому что берёмся только за простые — берёмся за сложные и ведём до конца.</p>
+  </div>
+  <img src="./decor-lines.png" alt="" aria-hidden="true" class="decor--why-lines">
+
+  <div class="why-bento">
+
+    <div class="why-card why-card--principle">
+      <div class="why-card-top">
+        <span class="why-card-tag">Главный принцип</span>
+        <img class="why-card-check" src="./why-check.png" alt="">
+      </div>
+      <div class="why-card-hourglass" aria-hidden="true">
+        <img src="./why-icon-hourglass.png" alt="">
+      </div>
+      <h3 class="why-card-title">Гарантия прописана<br>в договоре — <em>не в рекламе</em></h3>
+      <p class="why-card-desc">Если суд не выносит решение в вашу пользу — возвращаем деньги. Это условие договора, который вы видите до начала работы. Никакого мелкого шрифта.</p>
+    </div>
+
+    <div class="why-card why-card--01">
+      <h4 class="why-card-title-sm">Берёмся только там, где видим путь</h4>
+      <p class="why-card-desc-sm">Если дело заведомо проигрышное — скажем об этом на консультации, а не после оплаты. Это честно по отношению к вам и к нашей репутации.</p>
+    </div>
+
+    <div class="why-card why-card--key">
+      <h4 class="why-card-title-sm">Двойная квалификация в банкротстве</h4>
+      <p class="why-card-desc-sm">Юрист и арбитражный управляющий в одном лице — редкость. Мы понимаем, как думает управляющий со стороны суда, и используем это в вашу пользу.</p>
+      <img src="./icon-seal-orig.png" alt="" class="why-card-seal" aria-hidden="true">
+    </div>
+
+    <div class="why-card why-card--dark">
+      <h4 class="why-card-title-sm why-card-title-sm--light">Мы идём до конца</h4>
+      <p class="why-card-desc-sm why-card-desc-sm--light">Апелляция. Кассация. Верховный суд. Там, где другие останавливаются — мы продолжаем и формируем новую практику.</p>
+    </div>
+
+  </div>
+
+
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="services" id="услуги">
+
+
+  <!-- Decorative bee sketch (top gap) -->
+
+  <!-- Section header -->
+  <div class="svc-header">
+    <div class="svc-title-wrap">
+      <span class="why-eyebrow">— чем мы занимаемся</span>
+      <h2>Юридическая защита бизнеса<br>и частных лиц <em>на всех этапах спора</em></h2>
+    </div>
+    <img src="./decor-stroke.png" alt="" aria-hidden="true" class="decor--svc-stroke">
+  </div>
+
+  <!-- Bento grid -->
+  <div class="svc-grid">
+
+    <!-- 01: Гражданские споры (large) -->
+    <div class="svc-card svc-card--01">
+      <div class="svc-illustration" aria-hidden="true"><img src="./sketch-icon-gavel.png" alt=""></div>
+      <div class="svc-card-head">
+        <h3 class="svc-card-title">Гражданские споры</h3>
+      </div>
+      <p class="svc-card-desc">Если вас обманули, не заплатили или нарушили ваши права — мы знаем, как это остановить и получить результат.</p>
+      <div class="svc-tags">
+        <span class="svc-tag">Защита прав потребителей</span>
+        <span class="svc-tag">Взыскание долгов</span>
+        <span class="svc-tag">Трудовые конфликты</span>
+        <span class="svc-tag">Наследство</span>
+        <span class="svc-tag">Представительство в суде</span>
+        <span class="svc-tag">Подготовка документов</span>
+      </div>
+      <span class="svc-card-arrow">подробнее →</span>
+    </div>
+
+    <!-- 02: Корпоративное право -->
+    <div class="svc-card svc-card--02">
+      <div class="svc-card-head">
+        <h3 class="svc-card-title">Корпоративное право</h3>
+        <div class="svc-illustration" aria-hidden="true"><img src="./sketch-icon-briefcase.png" alt=""></div>
+      </div>
+      <p class="svc-card-desc">Ведём корпоративные споры и судебные процессы любой сложности — от взыскания задолженности до защиты от субсидиарной ответственности.</p>
+      <div class="svc-tags">
+        <span class="svc-tag">Представительство в суде</span>
+        <span class="svc-tag">Подготовка документов</span>
+        <span class="svc-tag">Субсидиарная ответственность</span>
+        <span class="svc-tag">Взыскание задолженности</span>
+      </div>
+    </div>
+
+    <!-- 03: Банкротство (физ. и юр. лица) -->
+    <div class="svc-card svc-card--03">
+      <div class="svc-card-head">
+        <h3 class="svc-card-title">Банкротство</h3>
+        <div class="svc-illustration" aria-hidden="true"><img src="./sketch-icon-scales.png" alt=""></div>
+      </div>
+      <p class="svc-card-desc">Кредиты, займы, долги ЖКХ и налоги — списываем законно через суд. Понимаем процесс с двух сторон: как юрист и как арбитражный управляющий.</p>
+      <div class="svc-tags">
+        <span class="svc-tag">Физические лица</span>
+        <span class="svc-tag">Юридические лица</span>
+        <span class="svc-tag">Защита активов</span>
+        <span class="svc-tag">Арбитраж</span>
+      </div>
+    </div>
+
+    <!-- 04: Аутсорсинг (wide bar) -->
+    <div class="svc-card svc-card--04">
+      <div class="svc-card--04-row">
+        <div class="svc-card--04-left">
+          <div class="svc-card--04-icon" aria-hidden="true"><img src="./sketch-icon-shield.png" alt=""></div>
+          <div class="svc-card-head">
+                <h3 class="svc-card-title">Юридический аутсорсинг</h3>
+          </div>
+        </div>
+        <p class="svc-card-desc">Для малого бизнеса без штатного юриста — договоры, проверки контрагентов по фиксированному тарифу.</p>
+        <span class="svc-card-arrow">подробнее →</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ ЭКСПЕРТИЗА (АРБИТРАЖ) ═══ -->
+<section class="expertise" id="экспертиза">
+  <div class="expertise-inner">
+    <div class="expertise-left rv">
+      <span class="why-eyebrow">— редкая экспертиза</span>
+      <h2>Юрист и <em>арбитражный управляющий</em> — в одном лице</h2>
+      <p class="expertise-lead">В банкротных делах это решает исход. Мы понимаем процесс с обеих сторон — как защитник интересов доверителя и как управляющий, назначаемый судом. И используем это знание в вашу пользу.</p>
+      <div class="expertise-features">
+        <div class="expertise-feature">
+          <img class="expertise-feature-icon" src="./why-check.png" alt="">
+          <div>
+            <h4>Видим дело с обеих сторон</h4>
+            <p>Знаем, как думает управляющий со стороны суда, и заранее закрываем риски.</p>
+          </div>
+        </div>
+        <div class="expertise-feature">
+          <img class="expertise-feature-icon" src="./why-check.png" alt="">
+          <div>
+            <h4>Защита активов и интересов</h4>
+            <p>Оспаривание сделок, субсидиарная ответственность, сохранение имущества.</p>
+          </div>
+        </div>
+        <div class="expertise-feature">
+          <img class="expertise-feature-icon" src="./why-check.png" alt="">
+          <div>
+            <h4>Ведём процедуру целиком</h4>
+            <p>От первого заседания до завершения — без передачи дела сторонним специалистам.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="expertise-card">
+      <svg class="expertise-border-svg" aria-hidden="true"></svg>
+      <div class="expertise-card-top">
+        <span class="expertise-card-label">Статус и допуск</span>
+        <img class="expertise-card-check" src="./why-check.png" alt="">
+      </div>
+      <h3 class="expertise-card-title">Член СРО арбитражных управляющих</h3>
+      <div class="expertise-stats">
+        <div class="expertise-stat">
+          <div class="expertise-stat-num">2-в-1</div>
+          <div class="expertise-stat-label">квалификация юриста и управляющего</div>
+        </div>
+        <div class="expertise-stat">
+          <div class="expertise-stat-num">25 млн ₽</div>
+          <div class="expertise-stat-label">долгов списано через процедуру</div>
+        </div>
+        <div class="expertise-stat">
+          <div class="expertise-stat-num">Все</div>
+          <div class="expertise-stat-label">инстанции — до Верховного суда</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA после Экспертизы -->
+<div class="why" style="padding-top:0;padding-bottom:32px;">
+  <div class="why-cta rv">
+    <div class="why-cta-text">
+      <div class="why-cta-title">Банкротное дело — это не стандартный иск.</div>
+      <p class="why-cta-desc">Расскажите ситуацию — разберём, есть ли путь.</p>
+    </div>
+    <a href="#" class="btn-primary why-cta-btn" onclick="openModal();return false;">
+      Получить консультацию
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+        <path d="M2.5 7.5h10m-4.5-4.5 4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<!-- ═══ PROCESS ═══ -->
+<div style="padding: 0 40px 0">
+<section class="process" id="процесс">
+
+  <div class="proc-header">
+    <span class="proc-eyebrow">— от заявки до результата</span>
+    <h2>Как устроена работа — по шагам</h2>
+    <p>Большую часть работы делаем мы. Вам не нужно никуда ехать и разбираться в процессуальных тонкостях.</p>
+  </div>
+
+  <div class="proc-timeline">
+
+    <!-- ШАГ 0 — content LEFT -->
+    <div class="proc-step">
+      <div class="proc-content">
+        <span class="proc-label">ШАГ 0</span>
+        <h3 class="proc-step-title">Оставление заявки</h3>
+        <p class="proc-step-desc">Заполняете форму или оставляете номер. Перезваниваем в течение часа — без скриптов и навязывания.</p>
+        <span class="proc-meta">5 МИНУТ · ОНЛАЙН</span>
+      </div>
+    </div>
+
+    <!-- ШАГ 1 — content RIGHT -->
+    <div class="proc-step">
+      <div class="proc-content">
+        <span class="proc-label">ШАГ 1</span>
+        <h3 class="proc-step-title">Консультация</h3>
+        <p class="proc-step-desc">Рассказываете ситуацию. Говорим прямо: есть перспектива или нет, какой риск, сколько стоит и займёт.</p>
+        <span class="proc-meta">30–60 МИНУТ · ОНЛАЙН</span>
+      </div>
+    </div>
+
+    <!-- ШАГ 2 — content LEFT -->
+    <div class="proc-step">
+      <div class="proc-content">
+        <span class="proc-label">ШАГ 2</span>
+        <h3 class="proc-step-title">Договор</h3>
+        <p class="proc-step-desc">Если принимаем дело — заключаем договор. Сроки, стоимость и гарантия возврата — всё письменно.</p>
+        <span class="proc-meta">1–3 ДНЯ</span>
+      </div>
+    </div>
+
+    <!-- ШАГ 3 — content RIGHT -->
+    <div class="proc-step">
+      <div class="proc-content">
+        <span class="proc-label">ШАГ 3</span>
+        <h3 class="proc-step-title">Документы</h3>
+        <p class="proc-step-desc">Говорим, что именно нужно. Большинство оформляется онлайн. Непонятно — объясняем и помогаем получить.</p>
+        <span class="proc-meta">ОТ 1 НЕДЕЛИ</span>
+      </div>
+    </div>
+
+    <!-- ШАГ 4 — content LEFT -->
+    <div class="proc-step">
+      <div class="proc-content">
+        <span class="proc-label">ШАГ 4</span>
+        <h3 class="proc-step-title">Суд и переговоры</h3>
+        <p class="proc-step-desc">Подаём документы, представляем интересы в суде, ведём переговоры. Обновления — без необходимости вникать в детали.</p>
+        <span class="proc-meta">ЗАВИСИТ ОТ ДЕЛА</span>
+      </div>
+    </div>
+
+    <!-- ШАГ 5 — content RIGHT — Результат -->
+    <div class="proc-step proc-step-last">
+      <div class="proc-content">
+        <span class="proc-label">ШАГ 5</span>
+        <h3 class="proc-step-title">Результат</h3>
+        <p class="proc-step-desc">Решение суда, мировое соглашение, списанный долг или взысканная сумма. Объясняем, что это значит для вас.</p>
+        <span class="proc-meta">ФИНАЛ</span>
+      </div>
+    </div>
+
+    <!-- Single chain image — white bg erased via multiply -->
+    <img class="proc-zigzag" src="./zigzag.png" alt="">
+
+  </div>
+
+</section>
+</div><!-- /process padding wrapper -->
+
+<!-- CTA после Процесса -->
+<div class="why" style="padding-top:0;padding-bottom:56px;">
+  <div class="why-cta rv">
+    <div class="why-cta-text">
+      <div class="why-cta-title">Первый шаг занимает 5 минут.</div>
+      <p class="why-cta-desc">Оставьте заявку — перезвоним в течение часа и расскажем, как идёт работа по вашему типу дела.</p>
+    </div>
+    <a href="#" class="btn-primary why-cta-btn" onclick="openModal();return false;">
+      Оставить заявку
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+        <path d="M2.5 7.5h10m-4.5-4.5 4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ КЕЙСЫ -->
+<section class="cases" id="кейсы">
+  <div class="cases-inner">
+    <div class="cases-head">
+      <span class="cases-eyebrow">— реальные дела</span>
+      <h2>Кейсы</h2>
+    </div>
+
+    <div class="case-grid">
+
+      <article class="case-card case-card--hero">
+        <div class="case-card-side">
+          <div>
+            <div class="case-card-num">Дело № 02–17/А</div>
+            <span class="case-card-eyebrow">Прецедентное дело</span>
+          </div>
+          <div class="case-card-checks">
+            <span>Гражданский спор</span>
+            <span>Суд общей юрисдикции</span>
+            <span>Апелляция и кассация</span>
+          </div>
+        </div>
+        <div class="case-card-main">
+          <div class="case-card-icon" aria-hidden="true"><img src="./sketch-icon-document.png" alt=""></div>
+          <h3 class="case-card-title">Выиграли в апелляции и кассации после поражения в суде</h3>
+          <p class="case-card-desc">Доверитель проиграл дело в первой инстанции — судебной практики по этой категории споров почти не было. Подключились после поражения, добились отмены решения и сформировали новый судебный прецедент.</p>
+        </div>
+      </article>
+
+      <div class="case-row3">
+        <article class="case-stat-card">
+          <div class="case-stat-label">Арбитражный суд Москвы</div>
+          <div class="case-stat-num">4,1 млн ₽</div>
+          <h4 class="case-stat-title">Взыскали долг и отбили встречный иск на 2,1 млн ₽</h4>
+          <p class="case-stat-desc">Взыскали дебиторскую задолженность в рамках банкротства истца. Встречный иск ответчика на 2,1 млн рублей суд отклонил в полном объёме.</p>
+        </article>
+
+        <article class="case-stat-card">
+          <div class="case-stat-label">Банкротство · текущие требования</div>
+          <div class="case-stat-num">1,2 млн ₽</div>
+          <h4 class="case-stat-title">Получили деньги от компании-банкрота</h4>
+          <p class="case-stat-desc">Контрагент не оплатил услуги и был признан банкротом. Добились признания требований текущими и довели дело до реального получения долга и процентов.</p>
+        </article>
+
+        <article class="case-stat-card case-stat-card--dark">
+          <div class="case-stat-label">Банкротство физических лиц</div>
+          <div class="case-stat-num">25 млн ₽</div>
+          <h4 class="case-stat-title">Списали долги доверителей через банкротство</h4>
+          <p class="case-stat-desc">Провели несколько процедур банкротства физических лиц с крупной долговой нагрузкой и полностью освободили доверителей от требований кредиторов.</p>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ ТАРИФЫ -->
+<section class="plans" id="тарифы">
+  <div class="plans-head">
+    <div class="plans-head-text">
+      <span class="why-eyebrow">— абонентское обслуживание</span>
+      <h2>Юридическое сопровождение<br><em>бизнеса — под ключ</em></h2>
+      <p>Фиксированная ежемесячная оплата, понятный объём задач, живой юрист на связи.</p>
+    </div>
+    <div class="plans-head-icon" aria-hidden="true"><img src="./sketch-icon-key.png" alt=""></div>
+  </div>
+  <div class="plans-grid">
+
+    <div class="plan-card rv">
+      <div class="plan-top">
+        <div class="plan-name">Минимальный</div>
+        <div class="plan-desc">ИП и микробизнес с базовыми задачами</div>
+        <div class="plan-price">30 000 ₽</div>
+        <div class="plan-period">в месяц · абонемент</div>
+      </div>
+      <div class="plan-rows">
+        <div class="plan-row"><span class="plan-row-label">Устные консультации</span><span class="plan-val plan-val--yes">Без ограничений</span></div>
+        <div class="plan-row"><span class="plan-row-label">Письменные консультации</span><span class="plan-val">До 2 в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Разработка договоров</span><span class="plan-val">До 2 в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Заявления, письма, претензии, переписка</span><span class="plan-val">До 2 в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Регистрация юр. лиц, внесение изменений</span><span class="plan-val">1 действие в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Оценка перспектив дела, иски и жалобы</span><span class="plan-val">1 дело в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Представительство в суде</span><span class="plan-val">1 дело в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Выезды на переговоры с контрагентами</span><span class="plan-val">До 2 в мес.</span></div>
+      </div>
+      <div class="plan-foot"><button class="plan-btn" onclick="document.getElementById('контакты').scrollIntoView({behavior:'smooth'})">Обсудить</button></div>
+    </div>
+
+    <div class="plan-card plan-card--featured rv">
+      <span class="plan-badge">Популярный</span>
+      <div class="plan-top">
+        <div class="plan-name">Средний</div>
+        <div class="plan-desc">Малый бизнес с регулярными сделками</div>
+        <div class="plan-price">50 000 ₽</div>
+        <div class="plan-period">в месяц · абонемент</div>
+      </div>
+      <div class="plan-rows">
+        <div class="plan-row"><span class="plan-row-label">Устные консультации</span><span class="plan-val plan-val--yes">Без ограничений</span></div>
+        <div class="plan-row"><span class="plan-row-label">Письменные консультации</span><span class="plan-val">До 5 в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Разработка договоров</span><span class="plan-val">До 5 в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Заявления, письма, претензии, переписка</span><span class="plan-val">До 5 в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Регистрация юр. лиц, внесение изменений</span><span class="plan-val">2 действия в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Оценка перспектив дела, иски и жалобы</span><span class="plan-val">2 дела в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Представительство в суде</span><span class="plan-val">2 дела в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Выезды на переговоры с контрагентами</span><span class="plan-val">До 4 в мес.</span></div>
+      </div>
+      <div class="plan-foot"><button class="plan-btn" onclick="document.getElementById('контакты').scrollIntoView({behavior:'smooth'})">Обсудить</button></div>
+    </div>
+
+    <div class="plan-card rv">
+      <div class="plan-top">
+        <div class="plan-name">Максимальный</div>
+        <div class="plan-desc">Активно растущий бизнес</div>
+        <div class="plan-price">65 000 ₽</div>
+        <div class="plan-period">в месяц · абонемент</div>
+      </div>
+      <div class="plan-rows">
+        <div class="plan-row"><span class="plan-row-label">Устные консультации</span><span class="plan-val plan-val--yes">Без ограничений</span></div>
+        <div class="plan-row"><span class="plan-row-label">Письменные консультации</span><span class="plan-val">До 10 в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Разработка договоров</span><span class="plan-val">До 10 в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Заявления, письма, претензии, переписка</span><span class="plan-val">До 10 в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Регистрация юр. лиц, внесение изменений</span><span class="plan-val">4 действия в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Оценка перспектив дела, иски и жалобы</span><span class="plan-val">4 дела в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Представительство в суде</span><span class="plan-val">4 дела в мес.</span></div>
+        <div class="plan-row"><span class="plan-row-label">Выезды на переговоры с контрагентами</span><span class="plan-val">До 8 в мес.</span></div>
+      </div>
+      <div class="plan-foot"><button class="plan-btn" onclick="document.getElementById('контакты').scrollIntoView({behavior:'smooth'})">Обсудить</button></div>
+    </div>
+
+  </div>
+  <p class="plans-note">— первая консультация бесплатно</p>
+</section>
+
+<!-- ═══════════════════════════════════════════ ГАРАНТИЯ -->
+<section class="guarantee" id="гарантия">
+  <div class="guarantee-inner">
+    <div class="guarantee-text rv">
+      <span class="why-eyebrow">— гарантия возврата</span>
+      <h2>Мы не обещаем 100%.<br><em>Именно поэтому нам доверяют.</em></h2>
+      <p>Суд — состязательный процесс. Кроме вас, есть другая сторона, судья, непредвиденные обстоятельства. Любой юрист, обещающий «100% выиграем», говорит неправду.</p>
+      <p>Мы оцениваем ситуацию честно ещё до договора. Не видим реального пути — отказываемся сразу.</p>
+      <p><strong>Если суд не выносит решение в вашу пользу — возвращаем деньги.</strong> Это условие прописано в договоре до начала работы. Без оговорок.</p>
+    </div>
+    <div class="guarantee-visual rv">
+      <img src="./bee-sketch-transparent.png" class="guarantee-bee" alt="BeeConsulting">
+      <div class="guarantee-label">Если суд не выносит решение в вашу пользу — возвращаем деньги</div>
+      <p class="guarantee-note">— условие договора, который вы подписываете до начала работы</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ КОНТАКТЫ -->
+<section class="contact" id="контакты" style="position:relative">
+  <img src="./decor-plane.png" alt="" aria-hidden="true" class="decor decor--contact-plane">
+  <div class="contact-inner">
+    <div class="contact-left rv">
+      <span class="why-eyebrow">— бесплатная консультация</span>
+      <h2>Расскажите, что происходит.<br><em>Разберёмся вместе.</em></h2>
+      <p class="contact-sub">Без обязательств. Перезвоним в течение часа.</p>
+      <div class="contact-channels">
+        <div class="contact-channel-item">
+          <span class="contact-channel-label">Telegram</span>
+          <a href="https://t.me/beeconsulting" class="contact-channel-val">@beeconsulting</a>
+        </div>
+        <div class="contact-channel-item">
+          <span class="contact-channel-label">Телефон</span>
+          <a href="tel:+7" class="contact-channel-val">+7 (___) ___-__-__</a>
+        </div>
+      </div>
+      <p class="contact-hours">Москва · работаем с 8:00 до 20:00, ежедневно · по всей России дистанционно.</p>
+    </div>
+
+    <form class="contact-form-card" onsubmit="return false">
+      <div class="contact-form-grid">
+        <label class="cfield">
+          <span class="cfield-label">Ваше имя</span>
+          <input type="text" id="c-name" placeholder="Как к вам обращаться">
+        </label>
+        <label class="cfield">
+          <span class="cfield-label">Телефон</span>
+          <input type="tel" id="c-phone" placeholder="+7 (___) ___-__-__">
+        </label>
+      </div>
+      <label class="cfield cfield--full">
+        <span class="cfield-label">Коротко о ситуации</span>
+        <textarea id="c-msg" rows="4" placeholder="Что произошло и какой результат вам нужен"></textarea>
+      </label>
+      <button type="submit" class="contact-btn">Получить консультацию</button>
+      <p class="contact-privacy">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+    </form>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-top">
+        <span class="footer-avatar"><img src="./bee.png" alt=""></span>
+        <div class="footer-logo">Bee<span>Consulting</span></div>
+      </div>
+      <p class="footer-desc">Юрист и арбитражный управляющий.<br>Работаем по всей России — дистанционно.</p>
+      <div class="footer-slogan">«Жёсткие в суде — на вашей стороне»</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Услуги</div>
+      <div class="footer-links">
+        <a href="#услуги">Гражданские споры</a>
+        <a href="#услуги">Корпоративное право</a>
+        <a href="#услуги">Банкротство</a>
+        <a href="#услуги">Аутсорсинг для бизнеса</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Контакты</div>
+      <div class="footer-links">
+        <a href="tel:+7">+7 (___) ___-__-__</a>
+        <a href="https://t.me/beeconsulting">Telegram: @beeconsulting</a>
+        <span class="footer-static">Москва</span>
+        <span class="footer-static">8:00–20:00, ежедневно</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 BeeConsulting. Юридическое бюро.</span>
+    <span class="footer-copy"><a href="#" style="color:inherit;text-decoration:none;">Политика конфиденциальности</a></span>
+  </div>
+</footer>
+
+<script>
+/* ═══ HEX GRID ═══════════════════════════════════════════════ */
+function buildHexGrid() {
+  const svg = document.getElementById('hex-bg');
+  if (!svg) return;
+  svg.innerHTML = '';
+  const W = svg.clientWidth  || svg.parentElement.clientWidth  || 560;
+  const H = svg.clientHeight || svg.parentElement.clientHeight || 800;
+
+  const ns = 'http://www.w3.org/2000/svg';
+
+  // Pencil-hatch pattern inside each hex cell
+  const defs = document.createElementNS(ns, 'defs');
+
+  const pat = document.createElementNS(ns, 'pattern');
+  pat.setAttribute('id', 'hex-hatch');
+  pat.setAttribute('width', '7');
+  pat.setAttribute('height', '7');
+  pat.setAttribute('patternUnits', 'userSpaceOnUse');
+  pat.setAttribute('patternTransform', 'rotate(38)');
+  const hLine = document.createElementNS(ns, 'line');
+  hLine.setAttribute('x1', '0'); hLine.setAttribute('y1', '0');
+  hLine.setAttribute('x2', '0'); hLine.setAttribute('y2', '7');
+  hLine.setAttribute('stroke', 'rgba(80,80,80,0.07)');
+  hLine.setAttribute('stroke-width', '0.7');
+  pat.appendChild(hLine);
+  defs.appendChild(pat);
+  svg.appendChild(defs);
+
+  const r    = 40;
+  const colW = r * Math.sqrt(3);
+  const rowH = r * 1.5;
+  const cols = Math.ceil(W / colW) + 2;
+  const rows = Math.ceil(H / rowH) + 2;
+
+  for (let row = 0; row < rows; row++) {
+    const offset = row % 2 ? colW / 2 : 0;
+    for (let col = 0; col < cols; col++) {
+      const cx = col * colW + offset - colW / 2;
+      const cy = row * rowH - r;
+      const pts = [];
+      for (let v = 0; v < 6; v++) {
+        const a = (v * 60 - 30) * Math.PI / 180;
+        pts.push(`${(cx + r * Math.cos(a)).toFixed(1)},${(cy + r * Math.sin(a)).toFixed(1)}`);
+      }
+      const poly = document.createElementNS(ns, 'polygon');
+      poly.setAttribute('points', pts.join(' '));
+      poly.setAttribute('fill', 'url(#hex-hatch)');
+      poly.setAttribute('stroke', 'rgba(80,80,80,0.13)');
+      poly.setAttribute('stroke-width', '0.7');
+      svg.appendChild(poly);
+    }
+  }
+}
+
+/* ═══ WOBBLY OVAL (badge) ════════════════════════════════════ */
+function buildBadgeOutline() {
+  const el  = document.getElementById('badge');
+  const svg = document.getElementById('badge-svg');
+  if (!el || !svg) return;
+  svg.innerHTML = '';
+
+  const W = el.offsetWidth;
+  const H = el.offsetHeight;
+  if (!W || !H) return;
+
+  // deterministic noise
+  const noise = (s) => {
+    const v = Math.sin(s * 91.73 + 217.3) * 43758.5;
+    return v - Math.floor(v);
+  };
+
+  const cx = W / 2, cy = H / 2;
+  const rx = W / 2 - 1, ry = H / 2 - 0;
+  const N = 60;
+  const pts = [];
+
+  for (let i = 0; i < N; i++) {
+    const t = (i / N) * Math.PI * 2;
+    const jitter = (noise(i) - 0.5) * 5;
+    const stretch = 1 + (noise(i + 100) - 0.5) * 0.07;
+    const x = cx + (rx * stretch + jitter * 0.5) * Math.cos(t);
+    const y = cy + (ry * stretch + jitter * 0.8) * Math.sin(t);
+    pts.push((i === 0 ? 'M' : 'L') + `${x.toFixed(1)} ${y.toFixed(1)}`);
+  }
+  pts.push('Z');
+
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', pts.join(' '));
+  path.setAttribute('fill', 'none');
+  path.setAttribute('stroke', 'rgba(26,26,26,0.45)');
+  path.setAttribute('stroke-width', '1.4');
+  path.setAttribute('stroke-linecap', 'round');
+  svg.appendChild(path);
+}
+
+/* ═══ WOBBLY RECT (guarantee) ════════════════════════════════ */
+function buildGuaranteeRect() {
+  const el  = document.getElementById('gcard');
+  const svg = document.getElementById('gcard-svg');
+  if (!el || !svg) return;
+  svg.innerHTML = '';
+
+  const W = el.offsetWidth;
+  const H = el.offsetHeight;
+  if (!W || !H) return;
+
+  const noise = (s) => {
+    const v = Math.sin(s * 173.4 + 419.1) * 43758.5;
+    return v - Math.floor(v);
+  };
+
+  // Build 4 sides as jagged polylines
+  function side(x1, y1, x2, y2, steps, axis, seed) {
+    const pts = [];
+    for (let i = 0; i <= steps; i++) {
+      const t = i / steps;
+      const j = (noise(seed + i) - 0.5) * 4.5;
+      const x = x1 + (x2 - x1) * t + (axis === 'y' ? j : 0);
+      const y = y1 + (y2 - y1) * t + (axis === 'x' ? j : 0);
+      pts.push(`${x.toFixed(1)},${y.toFixed(1)}`);
+    }
+    return pts;
+  }
+
+  const p0 = 0, p1 = W, p2 = H;
+  const top    = side(p0, p0, p1, p0, 12, 'x', 0);
+  const right  = side(p1, p0, p1, p2, 8,  'y', 50);
+  const bottom = side(p1, p2, p0, p2, 12, 'x', 100);
+  const left   = side(p0, p2, p0, p0, 8,  'y', 150);
+
+  const all = [...top, ...right.slice(1), ...bottom.slice(1), ...left.slice(1)];
+  const d = all.map((pt, i) => (i === 0 ? 'M' : 'L') + pt).join(' ') + ' Z';
+
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', d);
+  path.setAttribute('fill', 'none');
+  path.setAttribute('stroke', 'rgba(26,26,26,0.3)');
+  path.setAttribute('stroke-width', '1.5');
+  path.setAttribute('stroke-linecap', 'round');
+  path.setAttribute('stroke-linejoin', 'round');
+  svg.appendChild(path);
+}
+
+/* ═══ REMOVE BEE WHITE BACKGROUND via Canvas ════════════════ */
+function removeBeeBackground() {
+  const img = document.querySelector('.bee-img');
+  if (!img) return;
+
+  function process() {
+    const canvas = document.createElement('canvas');
+    const ctx    = canvas.getContext('2d');
+    canvas.width  = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    ctx.drawImage(img, 0, 0);
+
+    const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const d = imgData.data;
+
+    for (let i = 0; i < d.length; i += 4) {
+      const r = d[i], g = d[i+1], b = d[i+2];
+      // Euclidean distance from pure white
+      const dist = Math.sqrt((255-r)**2 + (255-g)**2 + (255-b)**2);
+      if (dist < 38) {
+        d[i+3] = 0; // fully transparent
+      } else if (dist < 65) {
+        // soft edge transition
+        d[i+3] = Math.round(((dist - 38) / 27) * 255);
+      }
+    }
+
+    ctx.putImageData(imgData, 0, 0);
+    img.src = canvas.toDataURL('image/png');
+  }
+
+  if (img.complete && img.naturalWidth > 0) {
+    process();
+  } else {
+    img.addEventListener('load', process, { once: true });
+  }
+}
+
+/* ═══ REMOVE ICON BACKGROUNDS ═══════════════════════════════ */
+function removeIconBackground(img) {
+  function process() {
+    const canvas = document.createElement('canvas');
+    const ctx    = canvas.getContext('2d');
+    canvas.width  = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    ctx.drawImage(img, 0, 0);
+
+    const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const d = imgData.data;
+
+    for (let i = 0; i < d.length; i += 4) {
+      const r = d[i], g = d[i+1], b = d[i+2];
+      const dist = Math.sqrt((255-r)**2 + (255-g)**2 + (255-b)**2);
+      if (dist < 32) {
+        d[i+3] = 0;
+      } else if (dist < 58) {
+        d[i+3] = Math.round(((dist - 32) / 26) * 255);
+      }
+    }
+
+    ctx.putImageData(imgData, 0, 0);
+    img.src = canvas.toDataURL('image/png');
+  }
+
+  if (img.complete && img.naturalWidth > 0) {
+    process();
+  } else {
+    img.addEventListener('load', process, { once: true });
+  }
+}
+
+function removeAllIconBackgrounds() {
+  document.querySelectorAll('.svc-img').forEach(removeIconBackground);
+}
+
+/* ═══ SERVICE CARD BORDERS ══════════════════════════════════ */
+function buildServiceBorders() {
+  document.querySelectorAll('.svc-card').forEach((card, idx) => {
+    const svg = card.querySelector('.svc-border-svg');
+    if (!svg) return;
+    svg.innerHTML = '';
+
+    const W = card.offsetWidth;
+    const H = card.offsetHeight;
+    if (!W || !H) return;
+
+    const baseSeed = idx * 43 + 11;
+    const noise = s => {
+      const v = Math.sin((s + baseSeed) * 127.43 + 311.7) * 43758.5453;
+      return v - Math.floor(v);
+    };
+
+    const wobbly = (x1, y1, x2, y2, steps, perpAxis, seed) => {
+      const pts = [];
+      for (let i = 0; i <= steps; i++) {
+        const t  = i / steps;
+        const jitter = (noise(seed + i * 0.9) - 0.5) * 3.0;
+        pts.push([
+          +(x1 + (x2-x1)*t + (perpAxis==='y' ? jitter*0.4 : jitter)).toFixed(1),
+          +(y1 + (y2-y1)*t + (perpAxis==='x' ? jitter*0.4 : jitter)).toFixed(1),
+        ]);
+      }
+      return pts;
+    };
+
+    const m  = 1.5;
+    const top    = wobbly(m,   m,   W-m, m,   12, 'x', 0);
+    const right  = wobbly(W-m, m,   W-m, H-m,  9, 'y', 40);
+    const bottom = wobbly(W-m, H-m, m,   H-m, 12, 'x', 80);
+    const left   = wobbly(m,   H-m, m,   m,    9, 'y', 120);
+    const all    = [...top, ...right.slice(1), ...bottom.slice(1), ...left.slice(1)];
+    const d      = all.map(([x,y],i) => (i ? `L${x} ${y}` : `M${x} ${y}`)).join(' ') + ' Z';
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', d);
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke-width', '1.4');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('stroke-linejoin', 'round');
+    path.setAttribute('class', 'svc-border-path');
+    svg.appendChild(path);
+
+    // Hide border initially — will be drawn via rAF animation in revealCard()
+    path.style.setProperty('stroke-dasharray',  '3000');
+    path.style.setProperty('stroke-dashoffset', '3000');
+
+    svg.setAttribute('filter', 'url(#rough-chip)');
+  });
+}
+
+/* ── rAF border draw — guaranteed to work, no CSS transition quirks ── */
+function drawBorderRAF(path, durationMs) {
+  const totalLength = 3000;
+  const start = performance.now();
+  function tick(now) {
+    const elapsed = now - start;
+    const t = Math.min(elapsed / durationMs, 1);
+    // ease-out cubic: fast start, smooth finish
+    const ease = 1 - Math.pow(1 - t, 3);
+    path.style.setProperty('stroke-dashoffset', String(totalLength * (1 - ease)));
+    if (t < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+/* ═══ EXPERTISE CARD BORDER ══════════════════════════════════ */
+function buildExpertiseBorders() {
+  document.querySelectorAll('.expertise-card').forEach((card, idx) => {
+    const svg = card.querySelector('.expertise-border-svg');
+    if (!svg) return;
+    svg.innerHTML = '';
+
+    const W = card.offsetWidth;
+    const H = card.offsetHeight;
+    if (!W || !H) return;
+
+    const baseSeed = idx * 43 + 11;
+    const noise = s => {
+      const v = Math.sin((s + baseSeed) * 127.43 + 311.7) * 43758.5453;
+      return v - Math.floor(v);
+    };
+
+    const wobbly = (x1, y1, x2, y2, steps, perpAxis, seed) => {
+      const pts = [];
+      for (let i = 0; i <= steps; i++) {
+        const t  = i / steps;
+        const jitter = (noise(seed + i * 0.9) - 0.5) * 3.0;
+        pts.push([
+          +(x1 + (x2-x1)*t + (perpAxis==='y' ? jitter*0.4 : jitter)).toFixed(1),
+          +(y1 + (y2-y1)*t + (perpAxis==='x' ? jitter*0.4 : jitter)).toFixed(1),
+        ]);
+      }
+      return pts;
+    };
+
+    const m  = 1.5;
+    const top    = wobbly(m,   m,   W-m, m,   12, 'x', 0);
+    const right  = wobbly(W-m, m,   W-m, H-m,  9, 'y', 40);
+    const bottom = wobbly(W-m, H-m, m,   H-m, 12, 'x', 80);
+    const left   = wobbly(m,   H-m, m,   m,    9, 'y', 120);
+    const all    = [...top, ...right.slice(1), ...bottom.slice(1), ...left.slice(1)];
+    const d      = all.map(([x,y],i) => (i ? `L${x} ${y}` : `M${x} ${y}`)).join(' ') + ' Z';
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', d);
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke-width', '1');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('stroke-linejoin', 'round');
+    path.setAttribute('class', 'expertise-card-border-path');
+    svg.appendChild(path);
+
+    path.style.setProperty('stroke-dasharray',  '3000');
+    path.style.setProperty('stroke-dashoffset', '3000');
+
+    svg.setAttribute('filter', 'url(#rough-chip)');
+  });
+}
+
+function initExpertiseReveal() {
+  const card = document.querySelector('.expertise-card');
+  if (!card) return;
+  const io = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) {
+      card.classList.add('on');
+      const bp = card.querySelector('.expertise-card-border-path');
+      if (bp) drawBorderRAF(bp, 1000);
+      io.disconnect();
+    }
+  }, { threshold: 0.1 });
+  io.observe(card);
+}
+
+/* ═══ CONTACT FORM CARD BORDER ═══════════════════════════════ */
+function buildContactFormBorder() {
+  document.querySelectorAll('.contact-form-card').forEach((card, idx) => {
+    const svg = card.querySelector('.contact-form-border-svg');
+    if (!svg) return;
+    svg.innerHTML = '';
+
+    const W = card.offsetWidth;
+    const H = card.offsetHeight;
+    if (!W || !H) return;
+
+    const baseSeed = idx * 43 + 11;
+    const noise = s => {
+      const v = Math.sin((s + baseSeed) * 127.43 + 311.7) * 43758.5453;
+      return v - Math.floor(v);
+    };
+
+    const wobbly = (x1, y1, x2, y2, steps, perpAxis, seed) => {
+      const pts = [];
+      for (let i = 0; i <= steps; i++) {
+        const t  = i / steps;
+        const jitter = (noise(seed + i * 0.9) - 0.5) * 3.0;
+        pts.push([
+          +(x1 + (x2-x1)*t + (perpAxis==='y' ? jitter*0.4 : jitter)).toFixed(1),
+          +(y1 + (y2-y1)*t + (perpAxis==='x' ? jitter*0.4 : jitter)).toFixed(1),
+        ]);
+      }
+      return pts;
+    };
+
+    const m  = 1.5;
+    const top    = wobbly(m,   m,   W-m, m,   12, 'x', 0);
+    const right  = wobbly(W-m, m,   W-m, H-m,  9, 'y', 40);
+    const bottom = wobbly(W-m, H-m, m,   H-m, 12, 'x', 80);
+    const left   = wobbly(m,   H-m, m,   m,    9, 'y', 120);
+    const all    = [...top, ...right.slice(1), ...bottom.slice(1), ...left.slice(1)];
+    const d      = all.map(([x,y],i) => (i ? `L${x} ${y}` : `M${x} ${y}`)).join(' ') + ' Z';
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', d);
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke-width', '1');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('stroke-linejoin', 'round');
+    path.setAttribute('class', 'contact-form-border-path');
+    svg.appendChild(path);
+
+    path.style.setProperty('stroke-dasharray',  '3000');
+    path.style.setProperty('stroke-dashoffset', '3000');
+
+    svg.setAttribute('filter', 'url(#rough-chip)');
+  });
+}
+
+function initContactFormReveal() {
+  const card = document.querySelector('.contact-form-card');
+  if (!card) return;
+  let revealed = false;
+  function reveal() {
+    if (revealed) return;
+    revealed = true;
+    card.classList.add('on');
+    const bp = card.querySelector('.contact-form-border-path');
+    if (bp) drawBorderRAF(bp, 1000);
+  }
+  setTimeout(reveal, 400);
+  const io = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { io.disconnect(); reveal(); }
+  }, { threshold: 0, rootMargin: '0px 0px 300px 0px' });
+  io.observe(card);
+}
+
+/* ═══ CASE CARD BORDERS ══════════════════════════════════════ */
+function buildCaseBorders() {
+  document.querySelectorAll('.case-card, .case-stat-card').forEach((card, idx) => {
+    const svg = card.querySelector('.case-border-svg');
+    if (!svg) return;
+    svg.innerHTML = '';
+
+    const W = card.offsetWidth;
+    const H = card.offsetHeight;
+    if (!W || !H) return;
+
+    const baseSeed = idx * 43 + 11;
+    const noise = s => {
+      const v = Math.sin((s + baseSeed) * 127.43 + 311.7) * 43758.5453;
+      return v - Math.floor(v);
+    };
+
+    const wobbly = (x1, y1, x2, y2, steps, perpAxis, seed) => {
+      const pts = [];
+      for (let i = 0; i <= steps; i++) {
+        const t  = i / steps;
+        const jitter = (noise(seed + i * 0.9) - 0.5) * 3.0;
+        pts.push([
+          +(x1 + (x2-x1)*t + (perpAxis==='y' ? jitter*0.4 : jitter)).toFixed(1),
+          +(y1 + (y2-y1)*t + (perpAxis==='x' ? jitter*0.4 : jitter)).toFixed(1),
+        ]);
+      }
+      return pts;
+    };
+
+    const m  = 1.5;
+    const top    = wobbly(m,   m,   W-m, m,   12, 'x', 0);
+    const right  = wobbly(W-m, m,   W-m, H-m,  9, 'y', 40);
+    const bottom = wobbly(W-m, H-m, m,   H-m, 12, 'x', 80);
+    const left   = wobbly(m,   H-m, m,   m,    9, 'y', 120);
+    const all    = [...top, ...right.slice(1), ...bottom.slice(1), ...left.slice(1)];
+    const d      = all.map(([x,y],i) => (i ? `L${x} ${y}` : `M${x} ${y}`)).join(' ') + ' Z';
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', d);
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke-width', '1');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('stroke-linejoin', 'round');
+    path.setAttribute('class', 'case-border-path');
+    svg.appendChild(path);
+
+    path.style.setProperty('stroke-dasharray',  '3000');
+    path.style.setProperty('stroke-dashoffset', '3000');
+
+    svg.setAttribute('filter', 'url(#rough-chip)');
+  });
+}
+
+function revealCaseCard(card, idx) {
+  setTimeout(() => {
+    card.classList.add('on');
+    const bp = card.querySelector('.case-border-path');
+    if (bp) drawBorderRAF(bp, 1000);
+  }, idx * 120);
+}
+
+function initCasesReveal() {
+  const header = document.querySelector('.cases-head');
+  const cards  = Array.from(document.querySelectorAll('.case-card, .case-stat-card'));
+
+  let revealed = false;
+  setTimeout(() => {
+    if (revealed) return;
+    revealed = true;
+    cards.forEach((c, i) => revealCaseCard(c, i));
+  }, 600);
+
+  const obs = new IntersectionObserver(entries => {
+    if (revealed) return;
+    const anyVisible = entries.some(e => e.isIntersecting);
+    if (!anyVisible) return;
+    revealed = true;
+    obs.disconnect();
+    cards.forEach((c, i) => revealCaseCard(c, i));
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+
+  if (header) obs.observe(header);
+  cards.forEach(c => obs.observe(c));
+}
+
+/* ═══ WHY BENTO CARD BORDERS ═══════════════════════════════════ */
+function buildWhyCardBorders() {
+  document.querySelectorAll('.why-card').forEach((card, idx) => {
+    const svg = card.querySelector('.why-border-svg');
+    if (!svg) return;
+    svg.innerHTML = '';
+
+    const W = card.offsetWidth;
+    const H = card.offsetHeight;
+    if (!W || !H) return;
+
+    const baseSeed = idx * 43 + 11;
+    const noise = s => {
+      const v = Math.sin((s + baseSeed) * 127.43 + 311.7) * 43758.5453;
+      return v - Math.floor(v);
+    };
+
+    const wobbly = (x1, y1, x2, y2, steps, perpAxis, seed) => {
+      const pts = [];
+      for (let i = 0; i <= steps; i++) {
+        const t  = i / steps;
+        const jitter = (noise(seed + i * 0.9) - 0.5) * 3.0;
+        pts.push([
+          +(x1 + (x2-x1)*t + (perpAxis==='y' ? jitter*0.4 : jitter)).toFixed(1),
+          +(y1 + (y2-y1)*t + (perpAxis==='x' ? jitter*0.4 : jitter)).toFixed(1),
+        ]);
+      }
+      return pts;
+    };
+
+    const m  = 1.5;
+    const top    = wobbly(m,   m,   W-m, m,   12, 'x', 0);
+    const right  = wobbly(W-m, m,   W-m, H-m,  9, 'y', 40);
+    const bottom = wobbly(W-m, H-m, m,   H-m, 12, 'x', 80);
+    const left   = wobbly(m,   H-m, m,   m,    9, 'y', 120);
+    const all    = [...top, ...right.slice(1), ...bottom.slice(1), ...left.slice(1)];
+    const d      = all.map(([x,y],i) => (i ? `L${x} ${y}` : `M${x} ${y}`)).join(' ') + ' Z';
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', d);
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke-width', '1');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('stroke-linejoin', 'round');
+    path.setAttribute('class', 'why-card-border-path');
+    svg.appendChild(path);
+
+    path.style.setProperty('stroke-dasharray',  '3000');
+    path.style.setProperty('stroke-dashoffset', '3000');
+
+    svg.setAttribute('filter', 'url(#rough-chip)');
+  });
+}
+
+function revealWhyCard(card, idx) {
+  setTimeout(() => {
+    card.classList.add('on');
+    const bp = card.querySelector('.why-card-border-path');
+    if (bp) drawBorderRAF(bp, 1000);
+  }, idx * 110);
+}
+
+function initWhyBentoReveal() {
+  const bento = document.querySelector('.why-bento');
+  if (!bento) return;
+  const cards = Array.from(document.querySelectorAll('.why-card'));
+  let revealed = false;
+  function reveal() {
+    if (revealed) return;
+    revealed = true;
+    cards.forEach((c, i) => revealWhyCard(c, i));
+  }
+  setTimeout(reveal, 400);
+  const io = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { io.disconnect(); reveal(); }
+  }, { threshold: 0, rootMargin: '0px 0px 200px 0px' });
+  io.observe(bento);
+}
+
+/* ═══ SERVICES SCROLL REVEAL ═════════════════════════════════ */
+function revealCard(card, idx) {
+  setTimeout(() => {
+    card.classList.add('on');
+    const bp = card.querySelector('.svc-border-path');
+    if (bp) drawBorderRAF(bp, 1000);
+  }, idx * 120);
+}
+
+function initServicesReveal() {
+  const header = document.querySelector('.svc-header');
+  const cards  = Array.from(document.querySelectorAll('.svc-card'));
+
+  // Fallback: reveal after 600ms if observer never fires
+  let revealed = false;
+  setTimeout(() => {
+    if (revealed) return;
+    revealed = true;
+    if (header) header.classList.add('on');
+    cards.forEach((c, i) => revealCard(c, i));
+  }, 600);
+
+  if (!header) return;
+
+  const obs = new IntersectionObserver(entries => {
+    if (revealed) return;
+    const anyVisible = entries.some(e => e.isIntersecting);
+    if (!anyVisible) return;
+    revealed = true;
+    obs.disconnect();
+    header.classList.add('on');
+    cards.forEach((c, i) => revealCard(c, i));
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+
+  obs.observe(header);
+  cards.forEach(c => obs.observe(c));
+}
+
+/* ═══ INIT ═══════════════════════════════════════════════════ */
+function initNavBurger() {
+  const nav = document.querySelector('nav');
+  const burger = document.querySelector('.nav-burger');
+  if (!nav || !burger) return;
+  burger.addEventListener('click', () => {
+    const open = nav.classList.toggle('nav-open');
+    burger.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  nav.querySelectorAll('.nav-collapse a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('nav-open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+}
+
+function init() {
+  initNavBurger();
+  document.querySelectorAll('.svc-card').forEach((c, i) => c.style.setProperty('--i', i));
+  document.querySelectorAll('.case-card, .case-stat-card').forEach((c, i) => c.style.setProperty('--i', i));
+  document.querySelectorAll('.proc-step').forEach((c, i) => c.style.setProperty('--pi', i));
+
+  buildHexGrid();
+  removeBeeBackground();
+  removeAllIconBackgrounds();
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      buildBadgeOutline();
+      buildGuaranteeRect();
+      buildServiceBorders();
+      buildCaseBorders();
+      buildSitBorders();
+      buildProcessBorders();
+      buildChipOvals();
+      buildWhyCardBorders();
+      buildExpertiseBorders();
+      buildContactFormBorder();
+    });
+  });
+
+  initServicesReveal();
+  initCasesReveal();
+  initSituationsReveal();
+  initProcessReveal();
+  initWhyBentoReveal();
+  initExpertiseReveal();
+  initContactFormReveal();
+  initReveal('.expertise-left');
+  initReveal('.why-cta');
+  initReveal('.plan-card');
+  initReveal('.guarantee-text, .guarantee-visual');
+  initReveal('.contact-left');
+
+  document.querySelectorAll('.hero .rv, .why-head, .cases-head, .plans-head, .guarantee-text .why-eyebrow').forEach(el => {
+    const io = new IntersectionObserver(([e]) => { if(e.isIntersecting){ el.classList.add('on'); io.disconnect(); } }, {threshold:0.1});
+    io.observe(el);
+  });
+
+  document.querySelectorAll('.hero .rv').forEach(el => el.classList.add('on'));
+}
+
+function initReveal(selector) {
+  document.querySelectorAll(selector).forEach((el, i) => {
+    let done = false;
+    function reveal() { if (done) return; done = true; setTimeout(() => el.classList.add('on'), i * 80); }
+    setTimeout(reveal, 500 + i * 80);
+    const io = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { io.disconnect(); reveal(); }
+    }, { threshold: 0, rootMargin: '0px 0px 200px 0px' });
+    io.observe(el);
+  });
+}
+
+/* ═══ SIT CARD BORDERS ═══════════════════════════════════════ */
+function buildSitBorders() {
+  document.querySelectorAll('.sit-card').forEach((card, idx) => {
+    const svg = card.querySelector('.sit-border-svg');
+    if (!svg) return;
+    svg.innerHTML = '';
+    const W = card.offsetWidth, H = card.offsetHeight;
+    if (!W || !H) return;
+
+    const baseSeed = idx * 37 + 7;
+    const noise = s => { const v = Math.sin((s + baseSeed) * 127.43 + 311.7) * 43758.5453; return v - Math.floor(v); };
+    const wobbly = (x1, y1, x2, y2, steps, perpAxis, seed) => {
+      const pts = [];
+      for (let i = 0; i <= steps; i++) {
+        const t = i / steps;
+        const jitter = (noise(seed + i * 0.9) - 0.5) * 3.0;
+        pts.push([
+          +(x1 + (x2-x1)*t + (perpAxis==='y' ? jitter*0.4 : jitter)).toFixed(1),
+          +(y1 + (y2-y1)*t + (perpAxis==='x' ? jitter*0.4 : jitter)).toFixed(1),
+        ]);
+      }
+      return pts;
+    };
+
+    const m = 1.5;
+    const all = [
+      ...wobbly(m, m, W-m, m, 10, 'x', 0),
+      ...wobbly(W-m, m, W-m, H-m, 7, 'y', 40).slice(1),
+      ...wobbly(W-m, H-m, m, H-m, 10, 'x', 80).slice(1),
+      ...wobbly(m, H-m, m, m, 7, 'y', 120).slice(1),
+    ];
+    const d = all.map(([x,y],i) => (i ? `L${x} ${y}` : `M${x} ${y}`)).join(' ') + ' Z';
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', d);
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke-width', '1.8');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('stroke-linejoin', 'round');
+    path.setAttribute('class', 'sit-border-path');
+    svg.appendChild(path);
+
+    path.style.setProperty('stroke-dasharray',  '3000');
+    path.style.setProperty('stroke-dashoffset', '3000');
+    svg.setAttribute('filter', 'url(#rough-chip)');
+  });
+}
+
+/* ═══ SITUATIONS SCROLL REVEAL ═══ */
+function initSituationsReveal() {
+  const cards = Array.from(document.querySelectorAll('.sit-card'));
+  let revealed = false;
+
+  function revealSitCards() {
+    if (revealed) return;
+    revealed = true;
+    cards.forEach((card, i) => {
+      setTimeout(() => {
+        card.classList.add('on');
+        const bp = card.querySelector('.sit-border-path');
+        if (bp) drawBorderRAF(bp, 900);
+      }, i * 90);
+    });
+  }
+
+  setTimeout(revealSitCards, 800);
+
+  const io = new IntersectionObserver((entries) => {
+    if (entries.some(e => e.isIntersecting)) {
+      io.disconnect();
+      revealSitCards();
+    }
+  }, { threshold: 0 });
+  cards.forEach(c => io.observe(c));
+}
+
+/* ═══ PROCESS BORDERS ════════════════════════════════════════ */
+function buildProcessBorders() {
+  document.querySelectorAll('.proc-step').forEach((card, idx) => {
+    const svg = card.querySelector('.proc-border-svg');
+    if (!svg) return;
+    svg.innerHTML = '';
+    const W = card.offsetWidth, H = card.offsetHeight;
+    if (!W || !H) return;
+
+    const baseSeed = idx * 41 + 13;
+    const noise = s => { const v = Math.sin((s + baseSeed) * 127.43 + 311.7) * 43758.5453; return v - Math.floor(v); };
+    const wobbly = (x1, y1, x2, y2, steps, perpAxis, seed) => {
+      const pts = [];
+      for (let i = 0; i <= steps; i++) {
+        const t = i / steps;
+        const jitter = (noise(seed + i * 0.9) - 0.5) * 3.2;
+        pts.push([
+          +(x1 + (x2-x1)*t + (perpAxis==='y' ? jitter*0.4 : jitter)).toFixed(1),
+          +(y1 + (y2-y1)*t + (perpAxis==='x' ? jitter*0.4 : jitter)).toFixed(1),
+        ]);
+      }
+      return pts;
+    };
+
+    const m = 1.5;
+    const all = [
+      ...wobbly(m, m, W-m, m, 10, 'x', 0),
+      ...wobbly(W-m, m, W-m, H-m, 7, 'y', 40).slice(1),
+      ...wobbly(W-m, H-m, m, H-m, 10, 'x', 80).slice(1),
+      ...wobbly(m, H-m, m, m, 7, 'y', 120).slice(1),
+    ];
+    const d = all.map(([x,y],i) => (i ? `L${x} ${y}` : `M${x} ${y}`)).join(' ') + ' Z';
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', d);
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke-width', '1.8');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('stroke-linejoin', 'round');
+    path.setAttribute('class', 'proc-border-path');
+    svg.appendChild(path);
+    svg.setAttribute('filter', 'url(#rough-chip)');
+  });
+}
+
+/* ═══ PROCESS SCROLL REVEAL ══════════════════════════════════ */
+function initProcessReveal() {
+  const steps = Array.from(document.querySelectorAll('.proc-step'));
+  let revealed = false;
+
+  function revealSteps() {
+    if (revealed) return;
+    revealed = true;
+    steps.forEach((step, i) => {
+      setTimeout(() => { step.classList.add('on'); }, i * 80);
+    });
+  }
+
+  setTimeout(revealSteps, 1000);
+
+  const io = new IntersectionObserver((entries) => {
+    if (entries.some(e => e.isIntersecting)) {
+      io.disconnect();
+      revealSteps();
+    }
+  }, { threshold: 0 });
+  steps.forEach(s => io.observe(s));
+}
+
+function buildChipOvals() {
+  const ns = 'http://www.w3.org/2000/svg';
+  document.querySelectorAll('.chip').forEach((chip, idx) => {
+    chip.querySelector('.chip-oval-svg')?.remove();
+    const cw = chip.offsetWidth;
+    if (!cw) return;
+    const W = cw + 28;
+    const H = 62;
+    const cx = W / 2, cy = H / 2;
+    const rx = W / 2 - 5;
+    const ry = H / 2 - 5;
+    const f = n => n.toFixed(2);
+
+    const k = 0.5522847498;
+    // Small gap at top: start 5% left of center, end 18% right — tiny open nick
+    // 4-arc bezier keeps text properly inside the oval
+    const d = [
+      `M ${f(cx - rx * 0.05)},${f(cy - ry)}`,
+      `C ${f(cx + rx*k)},${f(cy - ry)} ${f(cx + rx)},${f(cy - ry*k)} ${f(cx + rx)},${f(cy)}`,
+      `C ${f(cx + rx)},${f(cy + ry*k)} ${f(cx + rx*k)},${f(cy + ry)} ${f(cx)},${f(cy + ry)}`,
+      `C ${f(cx - rx*k)},${f(cy + ry)} ${f(cx - rx)},${f(cy + ry*k)} ${f(cx - rx)},${f(cy)}`,
+      `C ${f(cx - rx)},${f(cy - ry*k)} ${f(cx - rx*k)},${f(cy - ry)} ${f(cx + rx * 0.18)},${f(cy - ry)}`
+    ].join(' ');
+
+    const svg = document.createElementNS(ns, 'svg');
+    const tilts = [-2.5, 1.8, -1.2, 2.2];
+    svg.classList.add('chip-oval-svg');
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('filter', 'url(#rough-chip)');
+    svg.style.transform = `translateY(-50%) rotate(${tilts[idx % 4]}deg)`;
+
+    const path = document.createElementNS(ns, 'path');
+    path.setAttribute('d', d);
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke', 'var(--ink)');
+    path.setAttribute('stroke-width', '1.4');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('stroke-linejoin', 'round');
+
+    svg.appendChild(path);
+    chip.appendChild(svg);
+
+    const len = path.getTotalLength();
+    path.style.strokeDasharray = len;
+    path.style.strokeDashoffset = len;
+
+    setTimeout(() => {
+      path.style.transition = `stroke-dashoffset 1.2s cubic-bezier(0.33, 1, 0.68, 1)`;
+      path.style.strokeDashoffset = '0';
+    }, 600 + idx * 220);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', init);
+
+window.addEventListener('resize', () => {
+  buildHexGrid();
+  buildBadgeOutline();
+  buildGuaranteeRect();
+  buildServiceBorders();
+  buildProcessBorders();
+  buildChipOvals();
+});
+</script>
+
+<!-- ═══ MODAL ═══ -->
+<div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-label="Заявка на консультацию">
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose" aria-label="Закрыть">×</button>
+    <span class="modal-eyebrow">— бесплатная консультация</span>
+    <h2 class="modal-title">Расскажите,<br><em>что произошло.</em></h2>
+    <p class="modal-subtitle">Перезвоним в течение часа.</p>
+    <form onsubmit="return false">
+      <div class="modal-row">
+        <div class="modal-field">
+          <label>Ваше имя</label>
+          <input type="text" placeholder="Как к вам обращаться">
+        </div>
+        <div class="modal-field">
+          <label>Телефон</label>
+          <input type="tel" placeholder="+7 (___) ___-__-__">
+        </div>
+      </div>
+      <div class="modal-row">
+        <div class="modal-field">
+          <label>Коротко о ситуации</label>
+          <textarea placeholder="Что произошло и какой результат вам нужен"></textarea>
+        </div>
+      </div>
+      <button type="submit" class="modal-submit">Получить консультацию</button>
+      <p class="modal-privacy">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  const overlay = document.getElementById('contactModal');
+  const closeBtn = document.getElementById('modalClose');
+
+  window.openModal = function() {
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  // Phone mask +7 (___) ___-__-__
+  var phoneInput = overlay.querySelector('input[type="tel"]');
+  phoneInput.addEventListener('input', function(e){
+    var digits = this.value.replace(/\D/g,'');
+    if(digits.startsWith('8')) digits = '7' + digits.slice(1);
+    if(!digits.startsWith('7') && digits.length > 0) digits = '7' + digits;
+    digits = digits.slice(0,11);
+    var v = '+7';
+    if(digits.length > 1) v += ' (' + digits.slice(1,4);
+    if(digits.length >= 4) v += ') ' + digits.slice(4,7);
+    if(digits.length >= 7) v += '-' + digits.slice(7,9);
+    if(digits.length >= 9) v += '-' + digits.slice(9,11);
+    this.value = v;
+  });
+  phoneInput.addEventListener('keydown', function(e){
+    if(e.key === 'Backspace' && this.value === '+7') { this.value = ''; }
+  });
+  phoneInput.addEventListener('focus', function(){
+    if(!this.value) this.value = '+7 ';
+  });
+})();
+</script>
+</body>
+</html>

@@ -1273,15 +1273,44 @@
 
     @media (max-width: 720px) {
       .process { padding: 64px 24px 72px; }
-      .proc-header { margin-bottom: 56px; }
+      .proc-header { margin-bottom: 48px; }
       .proc-zigzag { display: none; }
+
+      /* счётчик для hex-номеров */
+      .proc-timeline { counter-reset: step-n -1; }
+
       .proc-step {
         grid-template-columns: 1fr;
         min-height: auto;
-        margin-bottom: 32px;
-        padding: 20px 0;
+        margin-bottom: 0;
+        padding: 20px 0 20px 54px;
         border-bottom: 1px solid rgba(26,26,26,0.09);
+        counter-increment: step-n;
       }
+      /* hex-сота с номером */
+      .proc-step::before {
+        content: counter(step-n);
+        position: absolute;
+        left: 0;
+        top: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        background: var(--honey-d);
+        color: #fff;
+        font-family: 'Fraunces', serif;
+        font-size: 17px;
+        font-weight: 600;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      }
+      /* последний шаг — янтарный акцент */
+      .proc-step-last::before { background: #C8860A; }
+
+      /* скрыть дублирующий текст «ШАГ N» */
+      .proc-label { display: none; }
+
       .proc-step:nth-child(odd) .proc-content,
       .proc-step:nth-child(even) .proc-content {
         grid-column: 1; padding: 0; text-align: left;

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BeeConsulting — Юридическая компания</title>
+  <link rel="preload" href="./hero-scales-v2.webp" as="image" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&family=Caveat:wght@400;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&display=swap" rel="stylesheet">
@@ -1304,7 +1305,7 @@
         top: 12px;
         width: 70px;
         height: 70px;
-        background-image: url('./zigzag.png');
+        background-image: url('./zigzag.webp');
         background-size: 255px 765px;
         background-repeat: no-repeat;
         mix-blend-mode: multiply;
@@ -2502,7 +2503,7 @@
 <nav>
   <a href="#" class="nav-logo">
     <span class="nav-logo-mark" aria-hidden="true">
-      <img src="./bee.png" alt="">
+      <img src="./bee.webp" alt="">
     </span>
     <span class="nav-logo-text">
       <span class="nav-logo-name"><em>Bee</em>Consulting</span>
@@ -2520,10 +2521,10 @@
       <a href="tel:+74950000000" class="nav-phone">+7 (495) 000-00-00</a>
       <div class="nav-messengers">
         <a href="https://t.me/" target="_blank" aria-label="Telegram">
-          <img src="./icon-telegram-sketch.png" alt="" width="32" height="32">
+          <img src="./icon-telegram-sketch.webp" alt="" width="32" height="32">
         </a>
         <a href="https://max.ru/" target="_blank" aria-label="Max">
-          <img src="./icon-max-sketch.png" alt="" width="32" height="32">
+          <img src="./icon-max-sketch.webp" alt="" width="32" height="32">
         </a>
       </div>
       <a href="#" class="nav-btn" onclick="openModal();return false;">Заказать звонок</a>
@@ -2537,9 +2538,9 @@
 <!-- ═══ HERO ═══ -->
 <section class="hero">
 
-  <img class="hero-bg-img" src="./hero-scales-v2.png" alt="" aria-hidden="true">
+  <img class="hero-bg-img" src="./hero-scales-v2.webp" alt="" aria-hidden="true" fetchpriority="high">
   <div class="hero-bg-scrim" aria-hidden="true"></div>
-  <img class="hero-bee-deco" src="./bee-sketch-transparent.png" alt="" aria-hidden="true">
+  <img class="hero-bee-deco" src="./bee-sketch-transparent.webp" alt="" aria-hidden="true" loading="lazy">
 
   <!-- Left: text -->
   <div class="hero-left" style="position:relative">
@@ -2564,7 +2565,7 @@
         </svg>
       </a>
       <div class="hero-trust-item">
-        <span class="hero-trust-icon"><img src="./icon-shield-lock.png" alt=""></span>
+        <span class="hero-trust-icon"><img src="./icon-shield-lock.webp" alt=""></span>
         <span class="hero-trust-text"><strong>Конфиденциально</strong>Полная защита данных</span>
       </div>
     </div>
@@ -2586,17 +2587,17 @@
     <h2>Мы не обещаем победу.<br><em>Мы её добиваемся.</em></h2>
     <p>Не потому что берёмся только за простые — берёмся за сложные и ведём до конца.</p>
   </div>
-  <img src="./decor-lines.png" alt="" aria-hidden="true" class="decor--why-lines">
+  <img loading="lazy" src="./decor-lines.webp" alt="" aria-hidden="true" class="decor--why-lines">
 
   <div class="why-bento">
 
     <div class="why-card why-card--principle">
       <div class="why-card-top">
         <span class="why-card-tag">Главный принцип</span>
-        <img class="why-card-check" src="./why-check.png" alt="">
+        <img loading="lazy" class="why-card-check" loading="lazy" src="./why-check.webp" alt="">
       </div>
       <div class="why-card-hourglass" aria-hidden="true">
-        <img src="./why-icon-hourglass.png" alt="">
+        <img loading="lazy" src="./why-icon-hourglass.webp" alt="">
       </div>
       <h3 class="why-card-title">Гарантия прописана<br>в договоре — <em>не в рекламе</em></h3>
       <p class="why-card-desc">Если суд не выносит решение в вашу пользу — возвращаем деньги. Это условие договора, который вы видите до начала работы. Никакого мелкого шрифта.</p>
@@ -2610,7 +2611,7 @@
     <div class="why-card why-card--key">
       <h4 class="why-card-title-sm">Двойная квалификация в банкротстве</h4>
       <p class="why-card-desc-sm">Юрист и арбитражный управляющий в одном лице — редкость. Мы понимаем, как думает управляющий со стороны суда, и используем это в вашу пользу.</p>
-      <img src="./icon-seal-orig.png" alt="" class="why-card-seal" aria-hidden="true">
+      <img loading="lazy" src="./icon-seal-orig.webp" alt="" class="why-card-seal" aria-hidden="true">
     </div>
 
     <div class="why-card why-card--dark">
@@ -2635,7 +2636,7 @@
       <span class="why-eyebrow">— чем мы занимаемся</span>
       <h2>Юридическая защита бизнеса<br>и частных лиц <em>на всех этапах спора</em></h2>
     </div>
-    <img src="./decor-stroke.png" alt="" aria-hidden="true" class="decor--svc-stroke">
+    <img loading="lazy" src="./decor-stroke.webp" alt="" aria-hidden="true" class="decor--svc-stroke">
   </div>
 
   <!-- Bento grid -->
@@ -2643,7 +2644,7 @@
 
     <!-- 01: Гражданские споры (large) -->
     <div class="svc-card svc-card--01">
-      <div class="svc-illustration" aria-hidden="true"><img src="./sketch-icon-gavel.png" alt=""></div>
+      <div class="svc-illustration" aria-hidden="true"><img loading="lazy" src="./sketch-icon-gavel.webp" alt=""></div>
       <div class="svc-card-head">
         <h3 class="svc-card-title">Гражданские споры</h3>
       </div>
@@ -2663,7 +2664,7 @@
     <div class="svc-card svc-card--02">
       <div class="svc-card-head">
         <h3 class="svc-card-title">Корпоративное право</h3>
-        <div class="svc-illustration" aria-hidden="true"><img src="./sketch-icon-briefcase.png" alt=""></div>
+        <div class="svc-illustration" aria-hidden="true"><img loading="lazy" src="./sketch-icon-briefcase.webp" alt=""></div>
       </div>
       <p class="svc-card-desc">Ведём корпоративные споры и судебные процессы любой сложности — от взыскания задолженности до защиты от субсидиарной ответственности.</p>
       <div class="svc-tags">
@@ -2678,7 +2679,7 @@
     <div class="svc-card svc-card--03">
       <div class="svc-card-head">
         <h3 class="svc-card-title">Банкротство</h3>
-        <div class="svc-illustration" aria-hidden="true"><img src="./sketch-icon-scales.png" alt=""></div>
+        <div class="svc-illustration" aria-hidden="true"><img loading="lazy" src="./sketch-icon-scales.webp" alt=""></div>
       </div>
       <p class="svc-card-desc">Кредиты, займы, долги ЖКХ и налоги — списываем законно через суд. Понимаем процесс с двух сторон: как юрист и как арбитражный управляющий.</p>
       <div class="svc-tags">
@@ -2693,7 +2694,7 @@
     <div class="svc-card svc-card--04">
       <div class="svc-card--04-row">
         <div class="svc-card--04-left">
-          <div class="svc-card--04-icon" aria-hidden="true"><img src="./sketch-icon-shield.png" alt=""></div>
+          <div class="svc-card--04-icon" aria-hidden="true"><img loading="lazy" src="./sketch-icon-shield.webp" alt=""></div>
           <div class="svc-card-head">
                 <h3 class="svc-card-title">Юридический аутсорсинг</h3>
           </div>
@@ -2715,21 +2716,21 @@
       <p class="expertise-lead">В банкротных делах это решает исход. Мы понимаем процесс с обеих сторон — как защитник интересов доверителя и как управляющий, назначаемый судом. И используем это знание в вашу пользу.</p>
       <div class="expertise-features">
         <div class="expertise-feature">
-          <img class="expertise-feature-icon" src="./why-check.png" alt="">
+          <img class="expertise-feature-icon" loading="lazy" src="./why-check.webp" alt="">
           <div>
             <h4>Видим дело с обеих сторон</h4>
             <p>Знаем, как думает управляющий со стороны суда, и заранее закрываем риски.</p>
           </div>
         </div>
         <div class="expertise-feature">
-          <img class="expertise-feature-icon" src="./why-check.png" alt="">
+          <img class="expertise-feature-icon" loading="lazy" src="./why-check.webp" alt="">
           <div>
             <h4>Защита активов и интересов</h4>
             <p>Оспаривание сделок, субсидиарная ответственность, сохранение имущества.</p>
           </div>
         </div>
         <div class="expertise-feature">
-          <img class="expertise-feature-icon" src="./why-check.png" alt="">
+          <img class="expertise-feature-icon" loading="lazy" src="./why-check.webp" alt="">
           <div>
             <h4>Ведём процедуру целиком</h4>
             <p>От первого заседания до завершения — без передачи дела сторонним специалистам.</p>
@@ -2742,7 +2743,7 @@
       <svg class="expertise-border-svg" aria-hidden="true"></svg>
       <div class="expertise-card-top">
         <span class="expertise-card-label">Статус и допуск</span>
-        <img class="expertise-card-check" src="./why-check.png" alt="">
+        <img class="expertise-card-check" loading="lazy" src="./why-check.webp" alt="">
       </div>
       <h3 class="expertise-card-title">Член СРО арбитражных управляющих</h3>
       <div class="expertise-stats">
@@ -2852,7 +2853,7 @@
     </div>
 
     <!-- Single chain image — white bg erased via multiply -->
-    <img class="proc-zigzag" src="./zigzag.png" alt="">
+    <img class="proc-zigzag" loading="lazy" src="./zigzag.webp" alt="">
 
   </div>
 
@@ -2898,7 +2899,7 @@
           </div>
         </div>
         <div class="case-card-main">
-          <div class="case-card-icon" aria-hidden="true"><img src="./sketch-icon-document.png" alt=""></div>
+          <div class="case-card-icon" aria-hidden="true"><img loading="lazy" src="./sketch-icon-document.webp" alt=""></div>
           <h3 class="case-card-title">Выиграли в апелляции и кассации после поражения в суде</h3>
           <p class="case-card-desc">Доверитель проиграл дело в первой инстанции — судебной практики по этой категории споров почти не было. Подключились после поражения, добились отмены решения и сформировали новый судебный прецедент.</p>
         </div>
@@ -2939,7 +2940,7 @@
       <h2>Юридическое сопровождение<br><em>бизнеса — под ключ</em></h2>
       <p>Фиксированная ежемесячная оплата, понятный объём задач, живой юрист на связи.</p>
     </div>
-    <div class="plans-head-icon" aria-hidden="true"><img src="./sketch-icon-key.png" alt=""></div>
+    <div class="plans-head-icon" aria-hidden="true"><img loading="lazy" src="./sketch-icon-key.webp" alt=""></div>
   </div>
   <div class="plans-grid">
 
@@ -3019,7 +3020,7 @@
       <p><strong>Если суд не выносит решение в вашу пользу — возвращаем деньги.</strong> Это условие прописано в договоре до начала работы. Без оговорок.</p>
     </div>
     <div class="guarantee-visual rv">
-      <img src="./bee-sketch-transparent.png" class="guarantee-bee" alt="BeeConsulting">
+      <img loading="lazy" src="./bee-sketch-transparent.webp" class="guarantee-bee" alt="BeeConsulting">
       <div class="guarantee-label">Если суд не выносит решение в вашу пользу — возвращаем деньги</div>
       <p class="guarantee-note">— условие договора, который вы подписываете до начала работы</p>
     </div>
@@ -3028,7 +3029,7 @@
 
 <!-- ═══════════════════════════════════════════ КОНТАКТЫ -->
 <section class="contact" id="контакты" style="position:relative">
-  <img src="./decor-plane.png" alt="" aria-hidden="true" class="decor decor--contact-plane">
+  <img loading="lazy" src="./decor-plane.webp" alt="" aria-hidden="true" class="decor decor--contact-plane">
   <div class="contact-inner">
     <div class="contact-left rv">
       <span class="why-eyebrow">— бесплатная консультация</span>
@@ -3073,7 +3074,7 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="footer-brand-top">
-        <span class="footer-avatar"><img src="./bee.png" alt=""></span>
+        <span class="footer-avatar"><img loading="lazy" src="./bee.webp" alt=""></span>
         <div class="footer-logo">Bee<span>Consulting</span></div>
       </div>
       <p class="footer-desc">Юрист и арбитражный управляющий.<br>Работаем по всей России — дистанционно.</p>

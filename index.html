@@ -250,6 +250,13 @@
       pointer-events: none;
       z-index: 1;
     }
+    .hero-bee-deco {
+      display: none;
+      position: absolute;
+      pointer-events: none;
+      user-select: none;
+      z-index: 1;
+    }
     .hero-deco-line::before {
       content: '';
       position: absolute;
@@ -2354,11 +2361,19 @@
     @media (max-width: 900px) {
       /* ── Hero ── */
       .hero-bg-img { object-position: 70% center; opacity: 0.18; }
-      .hero-bg-scrim { background: rgba(249,249,247,0.92); }
+      .hero-bg-scrim { background: rgba(249,249,247,0.88); }
       .hero-deco-line { display: none; }
       .hero-left {
         width: 100%;
         padding: 88px 24px 52px;
+      }
+      /* пчела-скетч внизу справа хиро */
+      .hero-bee-deco {
+        display: block;
+        right: -40px;
+        bottom: 40px;
+        width: 320px;
+        opacity: 0.18;
       }
       .hero-trust-row { gap: 14px; }
       .hero-trust-text { font-size: 11.5px; }
@@ -2519,6 +2534,7 @@
 
   <img class="hero-bg-img" src="./hero-scales-v2.png" alt="" aria-hidden="true">
   <div class="hero-bg-scrim" aria-hidden="true"></div>
+  <img class="hero-bee-deco" src="./bee-sketch-transparent.png" alt="" aria-hidden="true">
 
   <!-- Left: text -->
   <div class="hero-left" style="position:relative">

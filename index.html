@@ -2349,16 +2349,16 @@
       /* ── Услуги ── */
       .svc-header { flex-direction: column; align-items: flex-start; }
       .decor--svc-stroke { display: none; }
-      /* карточка 01: молоток — фон, не перекрывает чипы */
+      /* карточка 01: молоток крупный внизу, как на десктопе */
+      .svc-card--01 { padding: 26px 22px 180px; }
       .svc-card--01 .svc-illustration {
-        width: 220px; right: -10px; bottom: 0; opacity: 0.15; z-index: 0;
+        width: 300px; right: -20px; bottom: -10px; opacity: 0.88; z-index: 0;
       }
       .svc-card--01 .svc-tags { position: relative; z-index: 2; }
 
       .svc-grid { grid-template-columns: 1fr; }
       .svc-grid > * { grid-column: auto !important; grid-row: auto !important; }
       .svc-bee-deco { display: none; }
-      .svc-card--01 { padding: 26px 22px; }
 
       /* карточка 04: компактная вертикальная, full-width */
       .svc-card--04 { padding: 24px 22px; }
@@ -2379,12 +2379,16 @@
       .svc-card--04 .svc-card-title { font-size: 20px; white-space: normal; }
       .svc-card--04 .svc-card-desc { font-size: 13.5px; line-height: 1.6; margin-bottom: 4px; max-width: 100%; }
 
-      /* стрелка «подробнее» — видима на мобильном (нет hover) */
-      .svc-card-arrow { opacity: 1; transform: none; }
+      /* убрать кнопку «подробнее» на мобильном */
+      .svc-card-arrow { display: none; }
 
       /* карточки 02 и 03: иллюстрация чуть меньше */
       .svc-card--02 .svc-illustration,
       .svc-card--03 .svc-illustration { width: 80px; }
+
+      /* карточки 02 и 03: паддинг */
+      .svc-card--02,
+      .svc-card--03 { padding: 24px 22px; }
 
       /* карточки 02 и 03: паддинг */
       .svc-card--02,

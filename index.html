@@ -1283,39 +1283,44 @@
       .proc-header { margin-bottom: 48px; }
       .proc-zigzag { display: none; }
 
-      /* счётчик для hex-номеров */
-      .proc-timeline { counter-reset: step-n -1; }
-
       .proc-step {
         grid-template-columns: 1fr;
         min-height: auto;
         margin-bottom: 0;
-        padding: 20px 0 20px 54px;
+        padding: 16px 0 16px 72px;
         border-bottom: 1px solid rgba(26,26,26,0.09);
-        counter-increment: step-n;
       }
-      /* hex-сота с номером */
+
+      /* рисованная сота из zigzag.png — спрайт
+         original 724×2172 → display 255×765 (×0.352)
+         hex centres (display px):
+           left  x≈69  | y: 46, 203, 380
+           right x≈188 | y: 115, 292, 476
+         box 70×70, centre at 35 → pos = -(cx-35) -(cy-35)            */
       .proc-step::before {
-        content: counter(step-n);
+        content: '';
         position: absolute;
         left: 0;
-        top: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 38px;
-        height: 38px;
-        background: var(--honey-d);
-        color: #fff;
-        font-family: 'Fraunces', serif;
-        font-size: 17px;
-        font-weight: 600;
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        top: 12px;
+        width: 70px;
+        height: 70px;
+        background-image: url('../zigzag.png');
+        background-size: 255px 765px;
+        background-repeat: no-repeat;
+        mix-blend-mode: multiply;
       }
-      /* последний шаг — янтарный акцент */
-      .proc-step-last::before { background: #C8860A; }
+      /* nth-child(1) = img.proc-zigzag → шаги с (2).
+         Чётные (0,2,4) = ЛЕВАЯ сота  (x=87 display) → bg-x=-52
+         Нечётные (1,3,5) = ПРАВАЯ сота (x=161 display) → bg-x=-126
+         Позиции вычислены по точным центрам кластеров в zigzag.png (724×2172).  */
+      .proc-step:nth-child(1)::before { background-position: -52px  -22px;  } /* сота 0 */
+      .proc-step:nth-child(2)::before { background-position: -126px -130px; } /* сота 1 */
+      .proc-step:nth-child(3)::before { background-position: -52px  -252px; } /* сота 2 */
+      .proc-step:nth-child(4)::before { background-position: -126px -379px; } /* сота 3 */
+      .proc-step:nth-child(5)::before { background-position: -51px  -512px; } /* сота 4 */
+      .proc-step:nth-child(6)::before { background-position: -126px -655px; } /* сота 5 */
 
-      /* скрыть дублирующий текст «ШАГ N» */
+      /* скрыть текст «ШАГ N» — цифра уже в картинке */
       .proc-label { display: none; }
 
       .proc-step:nth-child(odd) .proc-content,

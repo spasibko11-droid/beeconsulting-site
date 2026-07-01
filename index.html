@@ -2367,7 +2367,16 @@
       /* ── О нас ── */
       .why { padding: 64px 24px 72px; }
       .decor--why-lines { display: none; }
-      .why-card-seal { display: none; }
+      /* печать видна, меньше и в правом нижнем углу */
+      .why-card-seal {
+        display: block;
+        width: 120px;
+        bottom: 12px;
+        left: auto;
+        right: 16px;
+        opacity: 0.82;
+      }
+      .why-card--key { padding-bottom: 110px; }
       .why-bento { grid-template-columns: 1fr; }
       .why-bento > * { grid-column: auto !important; grid-row: auto !important; }
       .why-card--principle { padding: 26px 22px; }

@@ -2362,21 +2362,26 @@
     }
     @media (max-width: 900px) {
       /* ── Hero ── */
-      .hero-bg-img { object-position: 70% center; opacity: 0.18; }
-      .hero-bg-scrim { background: rgba(249,249,247,0.88); }
+      .hero-bg-img {
+        object-position: right center;
+        opacity: 0.82;
+        transform: scale(1.05);
+      }
+      .hero-bg-scrim {
+        background: linear-gradient(to right,
+          rgba(249,249,247,0.99) 0%,
+          rgba(249,249,247,0.97) 38%,
+          rgba(249,249,247,0.7) 58%,
+          rgba(249,249,247,0.1) 100%
+        );
+      }
       .hero-deco-line { display: none; }
       .hero-left {
-        width: 100%;
-        padding: 88px 24px 52px;
+        width: 68%;
+        padding: 88px 0 52px 24px;
       }
-      /* пчела-скетч внизу справа хиро */
-      .hero-bee-deco {
-        display: block;
-        right: -40px;
-        bottom: 40px;
-        width: 320px;
-        opacity: 0.18;
-      }
+      /* пчелу убрать */
+      .hero-bee-deco { display: none; }
       .hero-trust-row { gap: 14px; }
       .hero-trust-text { font-size: 11.5px; }
       .hero-chips-bar { gap: 8px; }
@@ -2387,13 +2392,12 @@
       /* печать видна, меньше и в правом нижнем углу */
       .why-card-seal {
         display: block;
-        width: 200px;
-        bottom: -10px;
-        left: auto;
-        right: 6px;
+        position: static;
+        width: 180px;
+        margin: 16px 0 4px auto;
         opacity: 0.82;
       }
-      .why-card--key { padding-bottom: 120px; }
+      .why-card--key { padding-bottom: 20px; }
       .why-bento { grid-template-columns: 1fr; }
       .why-bento > * { grid-column: auto !important; grid-row: auto !important; }
       .why-card--principle { padding: 26px 22px; }
